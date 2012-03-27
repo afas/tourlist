@@ -1,0 +1,35 @@
+<h1>Список ссылок хронопея</h1>
+
+<br/>
+
+<table width="100%">
+  <tr>
+    <th><%= t('activerecord.attributes.chronopay_link.name') %></th>
+    <th><%= t('activerecord.attributes.chronopay_link.pay_product_id') %></th>
+    <th><%= t('activerecord.attributes.chronopay_link.product_price') %></th>
+    <th>Дата создания</th>
+    <th>Дата обновления</th>
+    <th>Статус</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @chronopay_links.each do |chronopay_link| %>
+  <tr>
+    <td><%= chronopay_link.name %></td>
+    <td><%= chronopay_link.pay_product_id %></td>
+    <td><%= chronopay_link.product_price %></td>
+    <td><%= l chronopay_link.created_at, :format => :long %></td>
+    <td><%= l chronopay_link.updated_at, :format => :long %></td>
+    <td><%= chronopay_link_status(chronopay_link) %></td>
+    <td><%= link_to 'Кнопка', chronopay_link %></td>
+    <td><%= link_to 'Редактировать', edit_chronopay_link_path(chronopay_link) %></td>
+    <td><%= link_to 'Удалить', chronopay_link, :confirm => 'Уверены?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Создать ссылку хронопея', new_chronopay_link_path %>

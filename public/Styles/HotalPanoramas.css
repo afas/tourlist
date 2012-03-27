@@ -1,0 +1,20 @@
+/* РЎС‚РёР»Рё СЃС‚СЂР°РЅРёС†С‹ РёРЅС„РѕСЂРјР°С†РёРё РѕС‚ Visual hotels */
+body
+{
+	font-family:Arial;
+	font-size:9pt;
+}
+.hotelSectionName div
+{
+	font-weight:bold;
+	cursor:pointer;
+}
+.hotelPanoramaName div
+{
+	font-weight:normal;
+}
+.hotelSubPanoramaName
+{
+	font-weight:normal;
+	color:Gray;
+}

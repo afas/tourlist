@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<iframe id="search" frameborder="0" scrolling="auto" allowtransparency="true" height="260" width="100%" src="/Html/SearchForm_row.htm?DestCountryId=<%= @country.bronni_id %>"></iframe>
+<iframe id="frameResult" frameborder="0" scrolling="auto" allowtransparency="true" width="100%" src="/CountryStudy/Html/countryInfo.htm?countryid=<%= @country.bronni_id %>&sectionId=9"></iframe>
+
+<!--<p>-->
+<!--<%= image_tag @country.image.url(:large) %>-->
+<!--</p>-->
+
+<!--<p>-->
+<!--<b>Name:</b>-->
+<!--<%= @country.name %>-->
+<!--</p>-->
+
+<!--<p>-->
+<!--<b>Description:</b>-->
+<!--<%= @country.description %>-->
+<!--</p>-->
+
+<!--<p>-->
+<!--<b>Top:</b>-->
+<!--<%= @country.top %>-->
+<!--</p>-->
+<% if user_signed_in? %>
+    <%= link_to 'Edit', edit_country_path(@country) %> |
+    <%= link_to 'Back', countries_path %>
+<% end %>

@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru-RU">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+
+  <meta name='yandex-verification' content='444eeaaf58db9c1b' />
+  <meta name="google-site-verification" content="EF7s_sKTJwByWqhYfyyAL7HiJyOvc68kMgKTrqtyU_o" />
+
+  <meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema" />
+
+  <title>Компания "Онлайн Системы" (onlina.ru) Онлайн продажа туров, авиа и жд билетов. Тел. 725-56-11</title>
+
+  <%= csrf_meta_tag %>
+
+  <%= stylesheet_link_tag '/Styles/Design', 'main', 'onlina' %>
+  <%= javascript_include_tag 'jquery-1.5.1', 'jquery.rails', 'application', 'jquery-ui-1.8.14.custom.min' %>
+  <%= yield :head %>
+
+  <!--[if lt IE 9]>
+    <%= stylesheet_link_tag 'ie' %>
+  <![endif]-->
+
+  <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-27920500-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+</head>
+<body class="index" id="docBody">
+<div class="wrapper">
+  <%= render :partial => 'layouts/header' %>
+  <div class="body">
+    <%= yield %>
+  </div>
+</div>
+<%= render :partial => 'layouts/footer' %>
+</body>
+</html>

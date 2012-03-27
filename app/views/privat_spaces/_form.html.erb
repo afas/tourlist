@@ -1,0 +1,44 @@
+<div id="contentBody">
+  <%= form_tag(privat_spaces_url, :remote => true) do %>
+      <%= hidden_field :contract, :tour_number %>
+      <%= hidden_field :contract, :tour_price %>
+      <%= hidden_field :contract, :full_name %>
+      <%= hidden_field :contract, :phone_country %>
+      <%= hidden_field :contract, :phone_city %>
+      <%= hidden_field :contract, :phone_number %>
+      <%= hidden_field :contract, :email %>
+      <%= hidden_field :contract, :description %>
+
+      <div class="i_agree">
+        <%= render 'i_agree' %>
+      </div>
+
+      <%= onlina_table('ЛИЧНЫЕ ДАННЫЕ ТУРИСТОВ') do %>
+
+          <div class="tourists">
+            <%= render 'tourists' %>
+          </div>
+
+          <div id="passport_actions">
+            <table cellspacing="0" cellpadding="0" width="100%" border="0">
+              <tr height="25px" valign="bottom">
+                <td width="250px">
+                  <span id="WaitingControl" style="display: none;">
+                      <img src="../Images/snake.gif">&nbsp;Идет отправка заказа....</span>
+                </td>
+                <td width="300px" align="right">
+                  <%= image_submit_tag '../Images/button_send.gif', :style => 'width: 85px;' %>
+                </td>
+                <td>&nbsp;</td>
+              </tr>
+            </table>
+
+            <div>
+              <%= link_to 'Заполнить паспортные данные ещё одного туриста', new_privat_space_path, :remote => true %>
+            </div>
+
+            <div class="t_red">* Поля отмеченные звездочкой обязательны для заполнения</div>
+          </div>
+      <% end %>
+  <% end %>
+</div>

@@ -1,0 +1,193 @@
+/* Globals */ 
+
+a img { border: none; vertical-align: middle; }
+ol, ul, dl { margin: 1em 0; padding: 0; list-style: none outside none; }
+li { margin: 0.5em 0 0.5em 1.25em; padding: 0; }
+dt { margin: 1em 0 0.5em; padding: 0; }
+dd { margin: 0.5em 0 1em 1.25em; padding: 0; text-indent: 0; }
+
+th, td { vertical-align: baseline; }
+th { text-align: center; }
+td { text-align: left; }
+table.simple { border-collapse: collapse; }
+td.simple { padding: 0; }
+table.layout { border-collapse: collapse; width: 100%; table-layout: fixed; }
+td.layout { padding: 0; text-align: left; vertical-align: top; }
+
+form { margin: 0; padding: 0; }
+input, select { margin: 0; padding: 0; font-size: 100%; vertical-align: baseline; //vertical-align: middle; }
+input[type="radio"], input[type="checkbox"] { vertical-align: middle; }
+input[type="text"], input[type="password"], textarea { padding: 0.2em; }
+input[type="text"], input[type="password"], select, textarea { background-color: White; border: 1px inset Gray; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; -khtml-box-sizing: border-box; box-sizing: border-box; }
+
+.invisible { display: none !Important; }
+.clear { clear: both; }
+.IE6 { display: none; }
+.center { text-align: center !Important; }
+.left { text-align: left !Important; }
+.right { text-align: right !Important; }
+.top { vertical-align: top !Important; }
+.bottom { vertical-align: bottom !Important; }
+.baseline { vertical-align: baseline !Important; }
+.middle { vertical-align: middle !Important; }
+/* /Globals */
+
+html { overflow-y: scroll; }
+
+
+div.alertMessageIe { position: absolute; text-align: center; z-index: 100; }
+div.alertMessageIe v\:roundrect { behavior: url(#default#VML); display: block; color: #FFF; background-color: #818E92; antialias: false; background-color: transparent\9; filter: alpha(opacity=90); }
+div.alertMessageIeTemp { display: inline; }
+div.alertMessage { opacity: 0.9; color: #FFF; text-align: center; display: inline-block; background-color: #818E92; -moz-border-radius: 10px; -webkit-border-radius: 10px; -khtml-border-radius: 10px; border-radius: 10px; }
+div.alertMessage, div.alertMessageIe, div.alertMessageIeTemp { font-size: x-large; }
+div#fade { position: fixed; top: 0; left: 0; right: 0; bottom: 0; }
+* html div#fade { position: absolute; top: expression(documentElement.scrollTop+'px'); height: expression(documentElement.offsetHeight); width: 100%; }
+
+#avia_layout { width: 86em; margin: 0 auto; padding: 3em 1.5em; }
+.avia_logo { font-size: xx-large; font-weight: bold; margin-bottom: 1em; }
+
+.avia_searchForm { display: block; position: relative; //zoom: 1; }
+.avia_searchForm .title { font-size: x-large; font-weight: bold; }
+.fieldsetRadio { display: inline-block; white-space: nowrap; //display: inline; //zoom: 1; }
+#fieldsetAD, #fieldsetCN { margin-right: 1.5em; }
+.fieldsetRadio .RadioBlock { font-size: x-large; }
+.fieldsetRadio .RadioBlock input { position: absolute; z-index: -1; left: -100000em; }
+.fieldsetRadio .RadioBlock label { font-size: xx-large; text-decoration: underline; font-weight: bold; cursor: pointer; }
+.fieldsetRadio .RadioBlock label.checked { text-decoration: none; -moz-border-radius: 1em; -webkit-border-radius: 1em; -khtml-border-radius: 1em; border-radius: 1em; padding: 0 0.3em; cursor: default; }
+.fieldsetRadio .RadioBlock label.vml { background: none !important; padding: 0 !important; }
+.fieldsetRadio .RadioBlock label.checked v\:oval { behavior: url(#default#VML); display: inline-block; vertical-align: middle; text-align: center; }
+.fieldsetText label { display: block; height: 1.35em; font-size: x-large; overflow: hidden; outline: none; }
+.fieldsetText label span.comment { font-size: small; font-weight: bold; white-space: nowrap; }
+.fieldsetText div.InputBlock { position: relative; //zoom: 1; }
+.fieldsetText input { display: block; width: 100%; //width: auto; font-size: xx-large; border: 1px solid; padding: 0.2em 5px; }
+.fieldsetText input:focus { outline: 2px solid #6495ED; -moz-outline-radius: 3px; }
+.fieldsetText label.Code { position: absolute; top: 0; bottom: 0; right: 0; margin: auto 10px auto 0; padding-top: 0.1em; font: medium/normal Monaco, "Lucida Console", monospace; height: 1.2em; z-index: 2; //top: 50%; //margin-top: -0.6em; }
+.SearchButtonRow { text-align: center; }
+.SearchButtonRow button { cursor: pointer; text-decoration: underline; font-weight: bold; font-size: x-large; border: 5px double; -moz-border-radius: 3em; -webkit-border-radius: 3em; -khtml-border-radius: 3em; border-radius: 3em; padding: 1.5em 0.5em; outline: none; position: relative; z-index: 50; }
+.SearchButtonRow button v\:oval { behavior: url(#default#VML); display: inline-block; vertical-align: middle; text-align: center; line-height: 5.2em; }
+.SearchButtonRow button.vml { background: none; border: none; padding: 0; //margin-right: -30px; }
+
+.fieldsetText, .fieldsetCalendar, .SearchButtonRow { margin-top: 3em; }
+td.col1 { padding-right: 0.75em; }
+td.col2 { padding-left: 0.75em; }
+
+
+
+.small { font-size: small; }
+#DirectLegend span, #ReturnLegend span { font-size: x-large; font-weight: bold; }
+
+
+#Suggest { border: 1px solid; position: absolute; z-index: 77; }
+#Suggest table { border-collapse: collapse; }
+#Suggest table td { padding: 0 5px; vertical-align: middle; font: small Monaco, "Lucida Console", monospace; }
+#Suggest table tr:hover, #Suggest table tr.hover { cursor: pointer; }
+#Suggest table td:first-child { font: x-large "Lucida Grande", Arial, Helvetica, sans-serif; }
+
+.Calendar { font-weight: bold; margin-top: 0.2em; }
+.Calendar table.Calendar { width: 69%; //width: auto; border-collapse: separate; }
+.Calendar table.Calendar { border-spacing: 0; border-collapse: collapse\9; }
+.Calendar table td { border: 2px outset; }
+.Calendar table td:first-child { -moz-border-radius-topleft: 7px; -moz-border-radius-bottomleft: 7px; -webkit-border-top-left-radius: 7px; -webkit-border-bottom-left-radius: 7px; -khtml-border-top-left-radius: 7px; -khtml-border-bottom-left-radius: 7px; border-top-left-radius: 7px; border-bottom-left-radius: 7px; border-right-width: 2px; }
+.Calendar table td:last-child { -moz-border-radius-topright: 7px; -moz-border-radius-bottomright: 7px; -webkit-border-top-right-radius: 7px; -webkit-border-bottom-right-radius: 7px; -khtml-border-top-right-radius: 7px; -khtml-border-bottom-right-radius: 7px; border-top-right-radius: 7px; border-bottom-right-radius: 7px; border-left-width: 2px; }
+.Calendar .DayContainer { position: relative; padding: 0.3em 0.5em; //zoom: 1; }
+.Calendar .DayOverline { position: absolute; display: none; top: 50%; left: 0; width: 100%; height: 2px; border-bottom: 1px solid; overflow: hidden; margin-top: -0.35em; }
+/* .Calendar .WeekDay { text-transform: lowercase; font-size: 120%; text-align: center; } */
+.Calendar .WeekDay { font-size: 120%; text-align: center; }
+.Calendar .CurrentDay { text-align: center; font-size: 800%; line-height: 0.9; padding: 17px; }
+.Calendar table table { font-size: 110%; margin: 0 0.2em; border-collapse: collapse; }
+.Calendar table table td { text-align: right; border: none; padding: 0.2em 0.5em; }
+.Calendar table td tbody td, .Calendar table td tr.DlabelRow td { border-left: none;  }
+.Calendar table td tbody td:first-child, .Calendar table td tr.DlabelRow td:first-child { border-left: none; }
+.Calendar table td tr.MonthLabelRow td { padding-top: 0.3em; padding-bottom: 0.3em; vertical-align: middle; }
+.Calendar td.MonthArRightCell { text-align: left; }
+.Calendar .MonthArLeftCell span, .Calendar .MonthArRightCell span { display: inline-block; overflow: hidden; cursor: pointer; height: 0; width: 0; line-height: 0; }
+.Calendar .MonthArLeftCell span { border-style: solid; border-color: transparent White transparent transparent; border-width: 0.4em 0.5em 0.4em 0; }
+.Calendar .MonthArRightCell span { border-style: solid; border-color: transparent transparent transparent White; border-width: 0.4em 0 0.4em 0.5em; }
+* html .Calendar .MonthArLeftCell span { border-color: #0B0B0B White #0B0B0B #0B0B0B; }
+* html .Calendar .MonthArRightCell span { border-color: #0B0B0B #0B0B0B #0B0B0B White; }
+.Calendar td.MonthCell { text-align: center; }
+.Calendar td.Yesterday, .Calendar td.Today, .Calendar td.FutureDay { cursor: pointer; }
+.Calendar table table tbody td { cursor: default; }
+
+#avia_header { font-size: larger; margin: 0 0 2em; }
+#avia_header div.Error div.title { margin-top: 0.5em; margin-bottom: 0.3em; }
+#avia_header div.Change { margin-top: 1.5em; text-align: right; }
+#avia_header div.Change span { border-bottom: 1px dotted; cursor: pointer; }
+
+#avia_ProgressBar { text-align: center; margin: 1em 0; font-size: large; }
+#avia_ProgressBar .Bar { width: 200px; height: 20px; position: relative; overflow: hidden; margin: 0.5em auto 0; border: 1px solid #50595E; -moz-border-radius: 3px; -webkit-border-radius: 3px; -khtml-border-radius: 3px; border-radius: 3px; background: #1E292E; }
+#avia_ProgressBar .Progress { position: absolute; overflow: hidden; height: 20px; top: 0; left: 0; background: #CCFF00; background-image: -moz-linear-gradient(top, #CCFF00, #4C920D); background-image: -webkit-gradient(linear, left top, left bottom, from(#CCFF00), to(#4C920D)); background-image: -khtml-gradient(linear, left top, left bottom, from(#CCFF00), to(#4C920D)); background-image: gradient(linear, left top, left bottom, from(#CCFF00), to(#4C920D)); filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorStr='#CCFF00', endColorStr='#4C920D'); background-image: gradient(linear, left top, left bottom, from(#CCFF00), to(#4C920D)); }
+
+#avia_results { }
+#avia_results div.FlightHeader { font-size: large; margin: 0 0 1em 0; }
+#avia_results ul { margin: 0; display: block; list-style: none; }
+#avia_results ul li { margin: 0; display: block; overflow: hidden; width: 100%; }
+#avia_results table { table-layout: fixed; width: 100%; border-collapse: collapse; }
+
+.Airline { cursor: pointer; }
+.Airline td { vertical-align: baseline; padding: 15px 0 10px; white-space: nowrap; overflow: hidden; }
+.Airline td.Amount { text-align: right; padding-right: 10px; }
+.Airline td.Amount span { font-size: large; }
+.Airline td.Amount span.Amount { font-size: xx-large; }
+.Airline td.Airline { text-align: left; padding-left: 10px; }
+.Airline td.Airline span { font-size: large; line-height: 40px; }
+.Airline td.Logo { text-align: center; vertical-align: middle; background: none repeat scroll 0 0 #FF6666; }
+* html .Airline td.Logo img { zoom: expression(runtimeStyle.zoom = 1, style.filter = 'progid:DXImageTransform.Microsoft.AlphaImageLoader(src=' + this.src + ',sizingMethod="crop")', src='empty.gif' ); width: 120px; height: 40px; }
+.Airline td.Toggle { text-align: center; vertical-align: middle; }
+.Airline td.Toggle span { font-size: 60px; line-height: 40px; cursor: pointer; }
+.Fare { border-left: 10px solid; border-top: 1px solid; width: 100%; overflow: hidden; margin-bottom: 10px; }
+.Fare table { margin-left: -10px; }
+.Fare td { border-top: 1px dotted; padding: 10px 0; white-space: nowrap; vertical-align: baseline; text-align:right; }
+.Fare .HeaderTable td { padding: 5px 0; }
+.Fare td.Amount { text-align: right; padding-right: 10px; }
+.Fare table.HeaderTable span { font-size: 130%; font-weight: bold; }
+.Fare span.Amount { text-decoration: underline; cursor: pointer; font-size: large; }
+.Fare table table { margin: 0; }
+.Fare table table td, .Fare .HeaderTable table td { border: none; padding: 0 0 0 63px; }
+.Fare table table td.Arrow { text-align: center; padding: 0; width: 2em; }
+.Fare table table td.Arrow span { font-size: x-large; }
+.Fare table table td.Travel { width: 22em; }
+.Fare table table td.Times { width: 7em; }
+.Fare span.TravelTime { width: 4em; display: inline-block; margin-right: 1em; }
+
+/* Colors */
+html, body { background-color: white; color: #434343; margin: 0;}
+div#fade { background-color: white; }
+.Direction1 { color: #04A2CA; }
+.Direction2 { color: #F26225; }
+.avia_logo { color: #CCFF00; display: none;}
+.avia_searchForm .title { color: #339933; }
+.fieldsetRadio .RadioBlock label { color: #CCCCCC; }
+.fieldsetRadio .RadioBlock label:hover { color: #6495ed; }
+.fieldsetRadio .RadioBlock label.checked { background-color: #FF6666;  color: white; }
+html>body .fieldsetRadio .RadioBlock label.checked.focus { color: #6495ed; }
+.fieldsetText label span.comment { color: #acacac; }
+.fieldsetText input { color: Black; border-color:  #ACACAC; }
+.fieldsetText label.Code { color: Black; }
+.SearchButtonRow button { background-color: #339933; color: White; border-color: white; width: 111px; }
+.SearchButtonRow button:hover, .SearchButtonRow button:focus  { border-color: #FFFF00; }
+#DirectLegend span, #ReturnLegend span { color: #CCff00; }
+#Suggest { color: Black; background-color: White; border-color:  #ACACAC; }
+#Suggest table tr:hover, #Suggest table tr.hover { background-color: #6495ED; color: White; }
+.Calendar { color: White; }
+.Calendar table td { border-color: white; background-color: #FF6666; }
+.Calendar .DayOverline { background-color: Black; border-bottom-color: #242424; }
+.Calendar .WeekDay { color: #CCFF00; }
+.Calendar td.MonthCell { color: #CCFF00; }
+.Calendar tr.DlabelRow { color: #878787; }
+.Calendar td.AnotherMonthDay { color: #333333; }
+.Calendar td.Today { color: #CCFF00; }
+.Calendar td.DirectDate { color: #04A2CA; }
+.Calendar td.ReturnDate { color: #04A2CA; }
+.Calendar table table tbody td:hover { color: #6495ED; }
+
+#avia_header div.Error div.title { color: #e73276; }
+#avia_header div.Change span {  border-bottom-color: #FF6666; color: #FF6666; }
+
+.Airline:hover { background-color: #FF6666; }
+.Fare { border-color: ##339933; }
+.Fare table>tbody>tr:hover { background-color: #1E292E; }
+.Fare table.HeaderTable tr:hover { background: none; }
+.Fare td { border-top-color: #50595E; }
+.Fare table.HeaderTable span { color: #339933; }
+.Fare span.NotConfirmed { color: #FF6666; }

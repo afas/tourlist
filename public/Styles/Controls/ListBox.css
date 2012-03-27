@@ -1,0 +1,47 @@
+		/* Основной стиль всего контрола */
+		.e-listbox 
+		{
+			display: inline-block;
+			cursor: default;
+			border:				1px solid black;
+			background:			white;
+			padding:			1px;
+			overflow:			auto;
+			overflow-x: 		hidden;
+			overflow-y:			auto;
+		}
+		
+		.e-listbox table
+		{
+			width: 100%;
+		}
+		
+		.e-listbox {width:200px; height: 100px;}
+		
+		
+		.e-listbox-hilite {
+			cursor:			hand;
+			/*cursor:			pointer;*/
+			background:		rgb(234,242,255);
+			border:			1px solid rgb(120,172,255);
+			color:			black;
+			white-space: nowrap;
+		}
+		
+		.e-listbox-selected {
+			cursor:			hand;
+			/*cursor:			pointer;*/
+			background:		blue;
+			border:			1px solid white;
+			color:			white;
+			white-space: nowrap;
+		}
+
+		.e-listbox-item   {
+			cursor:			hand;
+			/*cursor:			pointer;*/
+			background:		white;
+			border:			1px solid white;
+			color:			black;
+			white-space: nowrap;
+		}

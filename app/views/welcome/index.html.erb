@@ -1,0 +1,79 @@
+<% content_for(:head) do %>
+    <%= javascript_include_tag '/js/System/System',
+                               '/js/System/DateTime',
+                               '/js/ajs/AJS',
+                               '/js/ajs/AJS_fx',
+                               '/js/System/Ajax',
+                               '/js/Json/json',
+                               '/js/Proxy/SecurityProxy',
+                               '/js/Proxy/DictionariesProxy',
+                               '/js/Controls/ComboBox',
+                               '/js/Controls/ListBox',
+                               '/js/Controls/Calendar',
+                               '/js/Controls/calendar/calendar',
+                               '/js/Controls/calendar/calendar-helper',
+                               '/js/Controls/calendar/lang/calendar-ru_win_',
+                               '/js/Controls/calendar/calendar-setup',
+                               '/js/Setup',
+                               '/js/DataSource/DictionariesDataSource',
+                               '/js/Events',
+                               '/js/PageScript/SearchForm'
+
+
+    %>
+
+    <%= stylesheet_link_tag '/Styles/Design.css',
+                            '/Styles/Controls/ComboBox.css',
+                            '/Styles/Controls/calendar/skins/theme.css',
+                            '/Styles/SearchForm_small.css',
+                            '/Styles/Controls/ListBox.css'
+
+    %>
+
+    <script type="text/javascript">
+      $(function() {
+          $("#tabs").tabs();
+      });
+    </script>
+<% end %>
+
+<div class="leftColumn">
+  <div class="inner">
+    <%= render :partial => 'layouts/top10_countries' %>
+  </div>
+</div>
+<div class="mainColumn">
+  <div class="rightColumn">
+    <div class="inner">
+      <%= render :partial => 'layouts/countries_list' %>
+    </div>
+  </div>
+  <div class="contentColumn">
+    <div class="inner" id="contentBody">
+
+      <div id="tabs">
+        <div id="menu">
+          <ul>
+            <li><a href="#tour_search">Поиск тура</a> | </li>
+            <!--<li><a href="#avia_ticket" id="ticket_tab">Купить авиа билет</a></li>-->
+            <a href="any_avia/index.html">Авиабилеты</a>   |
+            <li><%= link_to 'Бронировать', new_avia_ticket_path(:html) %></li>
+          </ul>
+        </div>
+
+        <div id="tour_search">
+          <%= render 'tour_search_form' %>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+  <div class="clear"></div>
+ </div>
+<div class="clear"></div>
+
+
+<!--<div id='resultContainer' style="display:none; margin-top:20px;">-->
+<!--<iframe id="frameResult" frameborder="0" scrolling="auto" allowtransparency="true" height="400" width="100%" src="/Html/Results2.htm"></iframe>-->
+<!--</div>-->

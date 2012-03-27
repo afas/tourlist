@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<iframe id="frameCountryInfo" frameborder="0" scrolling="auto" allowtransparency="true" height="550" width="100%" src="/CountryStudy/Html/countryInfo.htm?countryid=<%= @top_tour.bronni_id %>&sectionId=9"></iframe>
+
+<!--<p>-->
+  <!--<b>Title:</b>-->
+  <!--<%= @top_tour.title %>-->
+<!--</p>-->
+
+<!--<p>-->
+  <!--<b>Description:</b>-->
+  <!--<%= @top_tour.description %>-->
+<!--</p>-->
+
+<!--<p>-->
+  <!--<b>Price:</b>-->
+  <!--<%= @top_tour.price %>-->
+<!--</p>-->
+
+<%= link_to 'Edit', edit_top_tour_path(@top_tour) %> |
+<%= link_to 'Back', top_tours_path %>

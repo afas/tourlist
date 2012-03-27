@@ -1,0 +1,53 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  time:
+    formats:
+      many_short: "%m/%d/%y"
+
+  paperclip:
+    errors:
+      presence: "must be set"
+      content_type: "incorrect type"
+
+  backend:
+    actions:
+      are_you_sure: "Are you sure?"
+      are_you_want_delete: "Are you want delete %{target}?"
+      back: "Back"
+      destroy: "Destroy"
+      edit: "Edit"
+      show: "Show"
+      please_select: "Please select"
+      success_create: "%{model} was successfully created."
+      success_update: "%{model} was successfully updated."
+      success_destroy: "%{model} was deleted."
+    titles:
+      creating: "New %{model}"
+      editing: "Editing %{model}"
+      listing: "Listing %{model}"
+
+  errors:
+    messages:
+      cannot_be_blank: "cannot be blank"
+      invalid_email: "incorrect"
+      invalid_url: "invalid, must be http://your-site.com"
+      mismatch: "mismatch"
+      must_be_zero_one: "must be more than zero and less than one"
+    template:
+      header:
+        one: "1 error prohibited this %{model} from being saved"
+        other: "%{count} errors prohibited this %{model} from being saved"
+
+  activerecord:
+    capitalized_models:
+      user: "User"
+    models:
+      user: "user"
+    attributes:
+      user:
+        email: "E-mail"
+        password: "Password"
+        password_confirmation: "Password confirmation"
+        current_password: "Current password"

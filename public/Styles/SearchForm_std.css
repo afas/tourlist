@@ -1,0 +1,81 @@
+	/* Р Р°Р·РјРµСЂС‹ РґР»СЏ РІС‹РїР°РґР°СЋС‰РµРіРѕ СЃРїРёСЃРєР° СЃС‚СЂР°РЅ */
+	#DestinationCountryComboBox_base, #DestinationCountryComboBox_base .e-combobox 
+	/* РћСЃРЅРѕРІРЅРѕРµ РѕРєРЅРѕ */
+	{width: 200px; height: 20px} 
+	#DestinationCountryComboBox_base .e-combobox .e-combobox-input 
+	/* РџРѕР»Рµ РІРІРѕРґР° С‚РµРєСЃС‚Р°, РјРµРЅСЊС€Рµ РѕСЃРЅРѕРІРЅРѕРіРѕ РѕРєРЅР° РЅР° С€РёСЂРёРЅСѓ РєР°СЂС‚РёРЅРєРё СЃРѕ СЃС‚СЂРµР»РѕС‡РєРѕР№ */
+	{width: 178px; height: 20px}
+	DestinationCountryComboBox_list 
+	/* Р’С‹СЃРѕС‚Р° РІС‹РїР°РґР°СЋС‰РµРіРѕ СЃРїРёСЃРєР° */
+	{height: 200px}
+
+	#CurrencyComboBoxLabel {padding-bottom: 5px}
+	
+	/* Р Р°Р·РјРµСЂС‹ РґР»СЏ РІС‹РїР°РґР°СЋС‰РµРіРѕ СЃРїРёСЃРєР° РІР°Р»СЋС‚ */
+	#CurrencyComboBox_base, #CurrencyComboBox_base .e-combobox 
+	/* РћСЃРЅРѕРІРЅРѕРµ РѕРєРЅРѕ */
+	{width: 45px; height: 16px} 
+	#CurrencyComboBox_base .e-combobox .e-combobox-input 
+	/* РџРѕР»Рµ РІРІРѕРґР° С‚РµРєСЃС‚Р°, РјРµРЅСЊС€Рµ РѕСЃРЅРѕРІРЅРѕРіРѕ РѕРєРЅР° РЅР° С€РёСЂРёРЅСѓ РєР°СЂС‚РёРЅРєРё СЃРѕ СЃС‚СЂРµР»РѕС‡РєРѕР№ */
+	{width: 25px; height: 15px}
+	#CurrencyComboBox_list 
+	/* Р’С‹СЃРѕС‚Р° РІС‹РїР°РґР°СЋС‰РµРіРѕ СЃРїРёСЃРєР° */
+	{height: 50px}
+	
+	#TourTypeComboBoxLabel {padding-bottom: 5px;}
+	
+	/* Р Р°Р·РјРµСЂС‹ РґР»СЏ РІС‹РїР°РґР°СЋС‰РµРіРѕ СЃРїРёСЃРєР° С‚РёРїРѕРІ С‚СѓСЂР° */
+	#TourTypeComboBox_base, #TourTypeComboBox_base .e-combobox 
+	/* РћСЃРЅРѕРІРЅРѕРµ РѕРєРЅРѕ */
+	{width: 200px; height: 16px} 
+	#TourTypeComboBox_base .e-combobox .e-combobox-input 
+	/* РџРѕР»Рµ РІРІРѕРґР° С‚РµРєСЃС‚Р°, РјРµРЅСЊС€Рµ РѕСЃРЅРѕРІРЅРѕРіРѕ РѕРєРЅР° РЅР° С€РёСЂРёРЅСѓ РєР°СЂС‚РёРЅРєРё СЃРѕ СЃС‚СЂРµР»РѕС‡РєРѕР№ */
+	{width: 178px; height: 15px}
+	#TourTypeComboBox_list 
+	/* Р’С‹СЃРѕС‚Р° РІС‹РїР°РґР°СЋС‰РµРіРѕ СЃРїРёСЃРєР° */
+	{height: 100px}
+
+	/* Р Р°Р·РјРµСЂС‹ РґР»СЏ РІС‹РїР°РґР°СЋС‰РµРіРѕ СЃРїРёСЃРєР° РіРѕСЂРѕРґРѕРІ РІС‹Р»РµС‚Р° */
+	#DepartureCityComboBox_base, #DepartureCityComboBox_base .e-combobox 
+	/* РћСЃРЅРѕРІРЅРѕРµ РѕРєРЅРѕ */
+	{width: 200px; height: 20px} 
+	#DepartureCityComboBox_base .e-combobox .e-combobox-input 
+	/* РџРѕР»Рµ РІРІРѕРґР° С‚РµРєСЃС‚Р°, РјРµРЅСЊС€Рµ РѕСЃРЅРѕРІРЅРѕРіРѕ РѕРєРЅР° РЅР° С€РёСЂРёРЅСѓ РєР°СЂС‚РёРЅРєРё СЃРѕ СЃС‚СЂРµР»РѕС‡РєРѕР№ */
+	{width: 178px; height: 20px}
+	#DepartureCityComboBox_list 
+	/* Р’С‹СЃРѕС‚Р° РІС‹РїР°РґР°СЋС‰РµРіРѕ СЃРїРёСЃРєР° */
+	{height: 200px}
+	
+	/* Р Р°Р·РјРµСЂС‹ РґР»СЏ СЃРїРёСЃРєР° РіРѕСЂРѕРґРѕРІ РїСЂРёР»РµС‚Р° */
+	#DestinationCitiesListBox_base {width: 200px; height: 150px}
+	
+	/* Р Р°Р·РјРµСЂС‹ РґР»СЏ СЃРїРёСЃРєР° РїРёС‚Р°РЅРёР№ */
+	#MealsListBox_base {width: 100px; height: 200px}
+	
+	/* Р Р°Р·РјРµСЂС‹ РґР»СЏ СЃРїРёСЃРєР° Р·РІРµР·РґРЅРѕСЃС‚РµР№ */
+	#StarsListBox_base {width: 100px; height: 200px}
+	
+	/* Р Р°Р·РјРµСЂС‹ РґР»СЏ СЃРїРёСЃРєР° Р·РІРµР·РґРЅРѕСЃС‚РµР№ */
+	#HotelsListBox_base {width: 200px; height: 200px}
+	
+	/* РЎС‚РёР»СЊ РїРѕР»СЏ РІРІРѕРґР° РєРѕР»РёС‡РµСЃС‚РІРѕ РІР·СЂРѕСЃР»С‹С… С‚СѓСЂРёСЃС‚РѕРІ */
+	.adult-text {width: 50px;}
+	/* РЎС‚РёР»СЊ РїРѕР»СЏ РІРІРѕРґР° РєРѕР»РёС‡РµСЃС‚РІРѕ РґРµС‚РµР№ С‚СѓСЂРёСЃС‚РѕРІ */
+	.child-text {width: 50px;}
+	
+	/* РЎС‚РёР»СЊ РїРѕР»СЏ РІРІРѕРґР° РїСЂРѕРґРѕР¶РёС‚РµР»СЊРЅРѕСЃС‚СЊ "РѕС‚" */
+	.nights-from-text {width: 50px;}
+	/* РЎС‚РёР»СЊ РїРѕР»СЏ РІРІРѕРґР° РїСЂРѕРґРѕР¶РёС‚РµР»СЊРЅРѕСЃС‚СЊ "РґРѕ" */
+	.nights-to-text {width: 50px;}
+
+	/* РЎС‚РёР»СЊ РїРѕР»СЏ РІРІРѕРґР° С†РµРЅР° "РѕС‚" */
+	.price-from-text {width: 50px;}
+	/* РЎС‚РёР»СЊ РїРѕР»СЏ РІРІРѕРґР° С†РµРЅР° "РґРѕ" */
+	.price-to-text {width: 50px;}
+	
+	/* РЎС‚РёР»СЊ РїРѕР»СЏ РІРІРѕРґР° РґР°С‚С‹ "СЃ" */
+	.date-from-text {width: 80px;}
+	/* РЎС‚РёР»СЊ РїРѕР»СЏ РІРІРѕРґР° РґР°С‚С‹ "РїРѕ" */
+	.date-to-text {width: 80px;}
+	
+	

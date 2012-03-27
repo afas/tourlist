@@ -1,0 +1,65 @@
+<% content_for(:head) do %>
+    <%= javascript_include_tag 'accordion_funcs' %>
+
+    <script type="text/javascript">
+        function cart_complete() {
+            var tour_number = $('#frameResult').contents().find('#NumberTurLabel span').html();
+            $('#contract_tour_number').val(tour_number);
+            var tour_price = parseFloat($('#frameResult').contents().find('#operatorRurPriceActual span:first').html().replace("&nbsp;", "").replace(" ", ""));
+            if (isNaN(tour_price)) {
+                tour_price = parseFloat($('#frameResult').contents().find('#referenceRurPrice span:first').html().replace("&nbsp;", "").replace(" ", ""));
+            }
+            $('#contract_tour_price').val(tour_price);
+            var client_full_name = $('#frameResult').contents().find('input[name=contactPerson]').val();
+            $('#contract_full_name').val(client_full_name);
+            var client_phone_country = $('#frameResult').contents().find('input[name=contactPhoneCountry]').val();
+            $('#contract_phone_country').val(client_phone_country);
+            var client_phone_city = $('#frameResult').contents().find('input[name=contactPhoneCity]').val();
+            $('#contract_phone_city').val(client_phone_city);
+            var client_phone_number = $('#frameResult').contents().find('input[name=contactPhoneNumber]').val();
+            $('#contract_phone_number').val(client_phone_number);
+            var client_email = $('#frameResult').contents().find('input[name=contactMail]').val();
+            $('#contract_email').val(client_email);
+            var client_description = $('#frameResult').contents().find('textarea[name=description]').val();
+            $('#contract_description').val(client_description);
+
+            $('#passport').removeClass('passive').addClass('active');
+            activate_clickable_all();
+            set_step('passport');
+
+            $('#frameResult').contents().find('#buttonSend img').remove();
+        }
+
+        function passport_complete(tour_number, tour_price, sign) {
+            $('#pay').removeClass('passive').addClass('active');
+            activate_clickable_all();
+            set_step('pay');
+            $('#passport_actions').remove();
+
+            $('#pay_product_id').val(tour_number);
+            $('#pay_product_price').val(tour_price);
+            $('#pay_product_sign').val(sign);
+        }
+
+        $(function() {
+            $('#frameResult').load(function() {
+                $(document).bind('broneOrderComplete', function() {
+                    if ($('#frameResult').contents().find('#BookingMessage').html() != "Ваш заказ направлен менеджеру турагентства.") return;
+
+                    cart_complete();
+                });
+//                $('#frameResult').contents().find('#buttonSend img').click(function() {
+//                    cart_complete();
+//                });
+            });
+
+            $('#passport_actions input').click(function() {
+                $('#WaitingControl').show();
+            });
+
+            activate_clickable_all();
+        });
+    </script>
+<% end %>
+
+<%= render :partial => 'full_tour_form', :locals => { :chronopay_template => 'chronopay_button' } %>

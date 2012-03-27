@@ -1,0 +1,41 @@
+<!--<div class="leftColumn">-->
+<!--<div class="inner">-->
+<!--<h2>Личный кабинет</h2>-->
+<!--<div class="dashboard">-->
+<!--<a href="#"><img class="avatar" src="" width="59" height="59" alt="" /></a>-->
+<!--<p class="nick"><a href="mailto:ivanov@gmail.com">ivanov@gmail.com</a></p>-->
+<!--<div class="info">-->
+<!--Имя: Василий<br />-->
+<!--Возраст: 22 года<br />-->
+<!--Любимые страны: <a href="#">Египет</a>, <a href="#">Турция</a>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<div class="leftColumn">
+  <div class="inner">
+    <%= render :partial => 'layouts/top10_countries' %>
+  </div>
+</div>
+<div class="mainColumn">
+  <div class="inner">
+    <div class="content">
+      <p id="notice"><%= notice %></p>
+      <h1>
+        <%= @static_page.title %>
+      </h1>
+      <p>
+        <%= raw(@static_page.content.markdown) %>
+      </p>
+
+      <%=
+#          link_to 'Edit', edit_static_page_path(@static_page)
+      %>
+      <%=
+#          link_to 'Back', static_pages_path
+      %>
+
+    </div>
+  </div>
+</div>
+<div class="clear"></div>

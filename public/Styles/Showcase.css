@@ -1,0 +1,45 @@
+.Tour
+{
+	width: 172px;
+	height: auto;
+}
+.showcaseImageDivClass
+{
+	float: left;
+	margin: 2px;
+	width: 50px;
+	height: auto;
+}
+.showcaseTextDivClass
+{
+	float: left;
+	margin: 2px;
+	width: 110px;
+	height: auto;
+}
+.showcaseFirstElement
+{
+	vertical-align: top;
+}
+
+/* Р Р°Р·РјРµСЂС‹ РґР»СЏ РІС‹РїР°РґР°СЋС‰РµРіРѕ СЃРїРёСЃРєР° СЃС‚СЂР°РЅ */
+#DestinationCountryComboBox_base, #DestinationCountryComboBox_base .e-combobox 
+/* РћСЃРЅРѕРІРЅРѕРµ РѕРєРЅРѕ */
+{width: 200px; height: 20px} 
+#DestinationCountryComboBox_base .e-combobox .e-combobox-input 
+/* РџРѕР»Рµ РІРІРѕРґР° С‚РµРєСЃС‚Р°, РјРµРЅСЊС€Рµ РѕСЃРЅРѕРІРЅРѕРіРѕ РѕРєРЅР° РЅР° С€РёСЂРёРЅСѓ РєР°СЂС‚РёРЅРєРё СЃРѕ СЃС‚СЂРµР»РѕС‡РєРѕР№ */
+{width: 178px; height: 20px}
+#DestinationCountryComboBox_list 
+/* Р’С‹СЃРѕС‚Р° РІС‹РїР°РґР°СЋС‰РµРіРѕ СЃРїРёСЃРєР° */
+{height: 200px}
+
+/* Р Р°Р·РјРµСЂС‹ РґР»СЏ РІС‹РїР°РґР°СЋС‰РµРіРѕ СЃРїРёСЃРєР° РіРѕСЂРѕРґРѕРІ РІС‹Р»РµС‚Р° */
+#DepartureCityComboBox_base, #DepartureCityComboBox_base .e-combobox 
+/* РћСЃРЅРѕРІРЅРѕРµ РѕРєРЅРѕ */
+{width: 200px; height: 20px} 
+#DepartureCityComboBox_base .e-combobox .e-combobox-input 
+/* РџРѕР»Рµ РІРІРѕРґР° С‚РµРєСЃС‚Р°, РјРµРЅСЊС€Рµ РѕСЃРЅРѕРІРЅРѕРіРѕ РѕРєРЅР° РЅР° С€РёСЂРёРЅСѓ РєР°СЂС‚РёРЅРєРё СЃРѕ СЃС‚СЂРµР»РѕС‡РєРѕР№ */
+{width: 178px; height: 20px}
+#DepartureCityComboBox_list 
+/* Р’С‹СЃРѕС‚Р° РІС‹РїР°РґР°СЋС‰РµРіРѕ СЃРїРёСЃРєР° */
+{height: 200px}

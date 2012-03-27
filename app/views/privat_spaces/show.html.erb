@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Contact:</b>
+  <%= @privat_space.contact %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%= @privat_space.phone %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @privat_space.email %>
+</p>
+
+<p>
+  <b>Note:</b>
+  <%= @privat_space.note %>
+</p>
+
+
+<%= link_to 'Edit', edit_privat_space_path(@privat_space) %> |
+<%= link_to 'Back', privat_spaces_path %>

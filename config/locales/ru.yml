@@ -1,0 +1,75 @@
+# Russian localization for Ruby on Rails 2.2+
+# by Yaroslav Markin <yaroslav@markin.net>
+#
+# Be sure to check out "russian" gem (http://github.com/yaroslav/russian) for
+# full Russian language support in Rails (month names, pluralization, etc).
+# The following is an excerpt from that gem.
+#
+# Для полноценной поддержки русского языка (варианты названий месяцев,
+# плюрализация и так далее) в Rails 2.2 нужно использовать gem "russian"
+# (http://github.com/yaroslav/russian). Следующие данные -- выдержка их него, чтобы
+# была возможность минимальной локализации приложения на русский язык.
+
+ru:
+  time:
+    formats:
+      many_short: "%d.%m.%y"
+
+  paperclip:
+    errors:
+      presence: "должено быть задано"
+      content_type: "имеет неправильный тип"
+
+  backend:
+    actions:
+      are_you_sure: "Вы уверены?"
+      are_you_want_delete: "Вы уверены, что хотите удалить %{target} \"%{name}\"?"
+      back: "Назад"
+      destroy: "Удалить"
+      edit: "Изменить"
+      show: "Посмотреть"
+      please_select: "Выберите..."
+      success_create: "%{model} успешно создан."
+      success_update: "%{model} успешно обновлён."
+      success_destroy: "%{model} удалён."
+    titles:
+      creating: "Создание %{model}"
+      editing: "Изменение %{model}"
+      listing: "Список %{model}"
+
+  helpers:
+    submit:
+      create: "Создать %{model}"
+      update: "Сохранить %{model}"
+      submit: "Сохранить %{model}"
+
+  errors:
+    messages:
+      cannot_be_blank: "не может быть пустым"
+      invalid_email: "некорректен"
+      invalid_url: "некорректна, должно быть что-то вроде http://your-site.com"
+      mismatch: "несовпадает"
+      must_be_zero_one: "должно быть больше нуля и меньше единицы"
+    template:
+      header:
+        one: "%{model}: сохранение не удалось из-за %{count} ошибки"
+        few: "%{model}: сохранение не удалось из-за %{count} ошибок"
+        many: "%{model}: сохранение не удалось из-за %{count} ошибок"
+        other: "%{model}: сохранение не удалось из-за %{count} ошибки"
+
+  activerecord:
+    capitalized_models:
+      user: "Пользователь"
+      chronopay_link: "Ссылка на хронопей"
+    models:
+      user: "пользователя"
+    attributes:
+      chronopay_link:
+        name: "Название"
+        pay_product_id: "ID продукта"
+        product_price: "Цена"
+      user:
+        email: "E-mail"
+        password: "Пароль"
+        password_confirmation: "Пароль ещё раз"
+        current_password: "Текущий пароль"

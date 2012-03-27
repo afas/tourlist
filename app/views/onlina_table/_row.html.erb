@@ -1,0 +1,17 @@
+<% r = rand %>
+<tr>
+  <td width="250px" nowrap="">
+    <%= label_tag "#{object.class.to_s.underscore}_#{field}_#{r}", title %>: <%= mark_required(object, field) %>
+  </td>
+  <td width="300px">
+    <%= text_field_tag "#{object.class.to_s.tableize}[][#{field}]", object.send(field),
+                       :id => "#{object.class.to_s.underscore}_#{field}_#{r}" %>
+  </td>
+  <td>
+    <% if object.errors.any? && !object.errors[field].empty? %>
+      <span style="padding-left: 14px; color: red;">Обязательное поле</span>
+    <% else %>
+      &nbsp;
+    <% end %>
+  </td>
+</tr>

@@ -1,0 +1,29 @@
+<h1>Топ туры(страноведение)</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Broni ID</th>
+    <th>Price</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @top_tours.each do |top_tour| %>
+  <tr>
+    <td><%= top_tour.title %></td>
+    <td><%= top_tour.description %></td>
+    <td><%= top_tour.bronni_id %></td>
+    <td><%= top_tour.price %></td>
+    <td><%= link_to 'Show', top_tour %></td>
+    <td><%= link_to 'Edit', edit_top_tour_path(top_tour) %></td>
+    <td><%= link_to 'Destroy', top_tour, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Top tour', new_top_tour_path %>

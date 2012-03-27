@@ -1,0 +1,19 @@
+Поступил заказ на авиабилет.
+
+Заказчик:
+Имя: <%= @buyer.full_name %>
+Email: <%= @buyer.email %>
+<% if @buyer.phone? %>
+Телефон: <%= @buyer.phone %>
+<% end %>
+
+Информация по билету:
+Тип: <%= @ticket.visit_type == 'go_back' ? 'туда и обратно' : 'только туда' %>
+Страна отправления: <%= @ticket.country_begin %>
+Город отправления: <%= @ticket.city_begin %>
+Страна прибытия: <%= @ticket.country_end %>
+Город прибытия: <%= @ticket.city_end %>
+Дата отправления: <%= @ticket.date_begin %>
+<% if @ticket.visit_type == 'go_back' %>
+Дата возвращения: <%= @ticket.date_end %>
+<% end %>

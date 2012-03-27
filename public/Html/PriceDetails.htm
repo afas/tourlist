@@ -1,0 +1,402 @@
+<!-- 1.2.0 -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<title>Детальная информация о цене</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta http-equiv="content-language" content="ru">
+	<meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema">
+	<!-- Системная библиотека -->
+	<script src="../js/System/System.js" type="text/javascript"></script>
+	<!-- Библиотека для работы с датами -->
+	<script src="../js/System/DateTime.js" type="text/javascript"></script>
+	<!-- Внешняя системная библиотека стороннего разработчика -->
+	<script src="../js/ajs/AJS.js" type="text/javascript"></script>
+	<script src="../js/ajs/AJS_fx.js" type="text/javascript"></script>
+	<!-- Оригинальный стиль BRONNI.RU -->
+	<link href="../Styles/Design.css" rel="stylesheet"></link>
+	<!-- Библиотека доступа к данным с сайта BRONN.RU -->
+	<script src="../js/System/Ajax.js" type="text/javascript"></script>
+	<!-- Библиотека доступа к данным в формате JSON-->
+	<script src="../js/Json/json.js" type="text/javascript"></script>
+	<!-- Прокси для авторизации -->
+	<script src="../js/Proxy/SecurityProxy.js" type="text/javascript"></script>
+	<!-- Прокси для получения данных по ценам -->
+	<script src="../js/Proxy/PriceProxy.js" type="text/javascript"></script>
+	<!-- Прокси для бронирования -->
+	<script src="../js/Proxy/BookingProxy.js" type="text/javascript"></script>
+	<!-- Обработчик шаблонов -->
+	<script src="../js/System/TemplateEngine.js" type="text/javascript"></script>
+	<script src="../js/System/jquery.js" type="text/javascript"></script>
+	<!-- Начальные установки модуля поиска -->
+	<script src="../js/Setup.js" type="text/javascript"></script>
+	<!-- Данные -->
+	<script src="../js/DataSource/ResultsDataSource.js" type="text/javascript"></script>
+	<script src="../js/DataSource/BookingDataSource.js" type="text/javascript"></script>
+	<!-- Библиотека Microsoft для проверки полей на заполнение -->
+	<script src="../js/System/WebUIValidation.js" type="text/javascript"></script>
+	<script src="../js/PageScript/PriceDetails.js" type="text/javascript"></script>
+	
+<script type="text/javascript" >
+function hide(elId) {
+	var span = document.getElementById(elId);
+	if (span.style.display == 'none') {
+		span.style.display = 'block';
+		span.style.height = 'auto';
+	}
+	else {
+		span.style.height = '0px';
+		span.style.display = 'none';
+	}
+}
+</script>
+	
+</head>
+<body onload="onloadwindow()">
+<div id="contentBody">
+	<table cellspacing="0" cellpadding="0" width="100%" border="0">
+		<tr valign="bottom">
+			<td height="14">
+				<img height="6" src="../Images/bg20.gif" width="15" border="0"></td>
+			<td style="background: url(../Images/bg21.gif) repeat-x left bottom">
+				<span class="h1">
+					<img height="7" src="../Images/ic1.gif" width="7" border="0">&nbsp;&nbsp; ПРОСМОТР ДЕТАЛЬНОЙ ИНФОРМАЦИИ</span></td>
+			<td>
+				<img height="6" src="../Images/bg22.gif" width="15" border="0"></td>
+		</tr>
+		<tr valign="top">
+			<td width="15" style="background: url(../Images/bg18.gif) repeat-y left top">
+				<img src="../Images/e.gif" width="15" height="1" border="0"></td>
+			<td width="100%">
+				<div id="Div1" style="display: inline;">
+					<span id="requestResultMessage" style="display: none; FONT-SIZE: medium; COLOR: red"></span>
+				</div>
+				<!-- Заголовок цены -->
+				<table id="priceTitle">
+					<tr>
+						<td>
+							<div id="price" class="m_block" style="float: left; display: none">
+							    <div id="convertedPrice" style="float: none; display: none"><b><span name="PriceCorrectionFun(fullprice.convertedPrice)$token"></span>&nbsp;<span class="t_red" name="fullprice.convertedCurrency.key$token"></span></b>&nbsp;(цена в валюте, выбранной при поиске)
+								</div>
+								<div id="referenceRurPrice" style="float: none; display: none"><b><span name="PriceCorrectionFun(fullprice.price.referenceRURPrice)$token"></span>&nbsp;<span class="t_red">RUR</span></b>&nbsp;(цена в рублях по курсу ЦБ)
+								</div>
+								<div id="operatorRurPrice" style="float: none; display: none"><b><span name="PriceCorrectionFun(fullprice.price.operatorRURPrice)$token"></span>&nbsp;<span class="t_red">RUR</span></b><span>&nbsp;(цена в рублях по курсу туроператора)</span>
+								</div>
+								<div id="operatorPrice" style="float: none;"><b><span name="PriceCorrectionFun(fullprice.price.operatorPrice)$token"></span>&nbsp;<span class="t_red" name="fullprice.price.operatorCurrency.key$token"></span></b><span>&nbsp;(цена в валюте туроператора)</span>
+								</div>
+							</div>
+						</td>
+						<td>
+							<div id="priceActual" class="m_block" style="float: left; display: none; font-size: 12px">
+								<div id="referenceRurPriceActual" style="float: none; display: none"><b><span name="PriceCorrectionFun(actualprice.referenceRurPrice)$token"></span>&nbsp;<span class="t_red">RUR</span></b>&nbsp;(цена в рублях по курсу ЦБ)
+								</div>
+								<div id="operatorRurPriceActual" style="float: none; display: none"><b><span name="PriceCorrectionFun(actualprice.operatorRurPrice)$token"></span>&nbsp;<span class="t_red">RUR</span></b><span>&nbsp;(цена в рублях по курсу туроператора)</span>
+								</div>
+								<div id="operatorPriceActual" style="float: none;"><b><span name="PriceCorrectionFun(actualprice.operatorPrice)$token"></span>&nbsp;<span class="t_red" name="actualprice.currency.key$token"></span></b><span>&nbsp;(цена в валюте туроператора)</span>
+								</div>
+							</div>
+						</td>
+						<td>
+							<span id="WaitingLoading" style="display: none;">
+								<img src="../Images/snake.gif">&nbsp;Идет загрузка информации по цене....</span>
+							<span id="ActualLoading" style="display: none;">
+								<img src="../Images/snake.gif">&nbsp;Идет запрос на актуализацию цены. Это может занять 1-2 минуты....</span>
+						</td>
+						<td rowspan="2">
+							<span id="ActualStamp" class="ActualStamp" style="display: none;"><img src="../Images/act2.gif" height="60px"></span>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div id="NumberTurLabel" class="m_block" style="float: none; display:none;">Номер тура:&nbsp;<b><span name="fullprice.price.id$token"></span></b></div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div id="HotelLabel" class="m_block" style="float: none; display:none;">Отель:&nbsp;<b><span name="getHotelLink(fullprice.price.hotel)$token"></span></b></div>
+						</td>
+					</tr>
+				</table>
+				<!-- //Заголовок цены -->
+				<br>
+				<!-- Информация о цене -->
+				<table cellpadding="0" cellspacing="1" border="0" width="100%" class="tbl_1" id="PriceInfo">
+					<tr class="f0">
+						<td colspan="6">
+							Общая информация по туру</td>
+					</tr>
+					<tr valign="top">
+						<td width="1%" nowrap align="right">
+							<b>Дата заезда:</b>&nbsp;&nbsp;</td>
+						<td width="50%">
+							<span name="(Date.fromUTCString(fullprice.price.checkinDate)).toLocaleDateString()$token"></span>
+						</td>
+						<td width="1%" nowrap align="right">
+							<b>Цена в системе:</b>&nbsp;&nbsp;</td>
+						<td width="50%" id="priceInSystem"><b><span name="PriceCorrectionFun(fullprice.price.operatorPrice)$token"></span>&nbsp;<span class="t_red" name="fullprice.price.operatorCurrency.key$token"></span></b></td>
+					</tr>
+					<tr valign="top">
+						<td width="1%" nowrap align="right">
+							<b>Направление:</b>&nbsp;&nbsp;</td>
+						<td>
+							<b><span name="fullprice.price.country.russianName$token"></span></b>
+						</td>
+						<td width="1%" nowrap align="right">
+							<b>Город:</b>&nbsp;&nbsp;</td>
+						<td width="50%">
+							<span name="fullprice.price.city.russianName$token"></span>
+						</td>
+					</tr>
+					<tr valign="top">
+						<td width="1%" nowrap align="right">
+							<b>Продолжительность:</b>&nbsp;&nbsp;</td>
+						<td>
+							<span name="fullprice.price.duration$token"></span>
+						</td>
+						<td width="1%" nowrap align="right">
+							<b></b>
+						</td>
+						<td>
+						</td>
+					</tr>
+				</table>
+				<br />
+				    
+				     <a id="tourdescrLink" visible="true" style="cursor:pointer;  font-weight:bold;  color:blue; padding:0px 10px; text-decoration:underline" onclick="hide('tourdescrSpan')" > Описание тура </a>
+				     <a id="extratourdescrLink"  visible="true"  style="cursor:pointer;  font-weight:bold;  color:blue; padding:0px 10px; text-decoration:underline" onclick="hide('extratourdescrSpan')" > Программа тура </a>
+				    <!--   <b style="cursor:pointer;  color:blue; padding:0px 10px; text-decoration:underline" onclick="hide('tourdescrSpan')">Описание тура</b> -->
+			       <!--  <b style="cursor:pointer;  color:blue; padding:0px 10px; text-decoration:underline" onclick="hide('extratourdescrSpan')">Программа тура</b>  -->
+			        
+			        <div id='tourdescrSpan' style='display:none;'> 
+				      <span  name="fullprice.spo.tourComment$token"></span> 
+			        </div>     
+				
+				
+				 <div id='extratourdescrSpan' style='display:none;'> 
+				   <span  name="fullprice.spo.extraDescr$token"></span>
+			     </div>
+				
+				<br />
+				
+				
+			   	
+			   	
+			   	
+				<br>
+				<table cellpadding="0" cellspacing="1" border="0" width="100%" class="tbl_1" id="ServicInfo">
+					<tr class="f0">
+						<td colspan="5">
+							В стоимость тура входят</td>
+					</tr>
+					<tr valign="top" align="center">
+						<td width="1%" nowrap>
+							&nbsp;</td>
+						<td width="10%" nowrap>
+							<b>Начало</b></td>
+						<td width="10%" nowrap>
+							<b>Конец</b></td>
+						<td width="90%">
+							<b>Подробное описание услуги</b></td>
+					</tr>
+					<tr valign="top" name="fullprice.hotels$row">
+						<td valign="middle" align="center">
+							<img src="../Images/ic_hotel.gif" width="18" height="18" border="0" alt=""></td>
+						<td>
+							<span name="getDateByDay(fullprice.hotels.startDay, 0).toFormatString()$token"></span>
+						</td>
+						<td>
+							<span name="getDateByDay(fullprice.hotels.startDay, fullprice.hotels.nights).toFormatString()$token"></span>
+						</td>
+						<td>
+							<span name="fullprice.hotels.city.russianName$token"></span>,&nbsp; <span name="fullprice.hotels.hotel.russianName$token"></span>,&nbsp; <span name="fullprice.hotels.star.russianName$token"></span>,&nbsp; Ночей:&nbsp;<span name="fullprice.hotels.nights$token"></span>,&nbsp; Питание:&nbsp;<span name="fullprice.hotels.meal.russianName$token"></span>,&nbsp; <span name="fullprice.hotels.accommodationType.russianName$token"></span>,&nbsp; <span name="fullprice.hotels.roomCategory.russianName$token"></span>,&nbsp; <span name="fullprice.hotels.roomLocaton.russianName$token"></span>,&nbsp; <span name="fullprice.hotels.roomView.russianName$token"></span>
+							&nbsp;<span name="HotelsPlacesInformation" class="t_red"></span>
+						</td>
+					</tr>
+					<tr valign="top" name="fullprice.flights$row">
+						<td valign="middle" align="center">
+							<img src="../Images/ic_avia.gif" width="18" height="18" border="0" alt=""></td>
+						<td>
+							<span name="getDateByDay(fullprice.flights.startDay, 0).toFormatString()$token"></span>
+						</td>
+						<td>
+							<span name="getDateByDay(fullprice.flights.startDay, fullprice.flights.nights).toFormatString()$token"></span>
+						</td>
+						<td>
+							Рейс:&nbsp;<span name="fullprice.flights.flightNumber$token"></span>;&nbsp; <span name="fullprice.flights.departureCity.russianName$token"></span>&nbsp;-&nbsp; <span name="fullprice.flights.arrivalCity.russianName$token"></span>;&nbsp; <span name="fullprice.flights.tariff.russianName$token"></span>
+							&nbsp;<span name="FlightsPlacesInformation" class="t_red"></span>
+						</td>
+					</tr>
+					<tr valign="top" name="fullprice.services$row">
+						<td valign="middle" align="center">
+							<img src="../Images/ic_uslugi.gif" width="18" height="18" border="0" alt=""></td>
+						<td>
+							<span name="getDateByDay(fullprice.services.startDay, 0).toFormatString()$token"></span>
+						</td>
+						<td>
+							<span name="getDateByDay(fullprice.services.startDay, fullprice.services.nights).toFormatString()$token"></span>
+						</td>
+						<td>
+							<span name="fullprice.services.city.russianName$token">;&nbsp;</span> <span name="fullprice.services.serviceType.russianName$token"></span>;&nbsp; <span name="fullprice.services.description.russianName$token"></span>;&nbsp; <span name="fullprice.services.description1.russianName$token"></span>
+						</td>
+					</tr>
+				</table>
+
+				<div id="ActualInfo" style="display:none">
+				<br>
+				<table cellpadding="0" cellspacing="1" border="0" width="100%" class="tbl_1">
+					<tr class="f0">
+						<td colspan="5">
+							Проверка наличия мест</td>
+					</tr>
+					<tr valign="top" name="actualprice.hotels$row">
+						<td valign="middle" align="center" width="1%">
+							<img src="../Images/ic_hotel.gif" width="18" height="18" border="0" alt=""></td>
+						<td width="90%">
+							<span name="actualprice.hotels.description$token"></span>
+						</td>
+						<td width="10%">
+							<span name="actualprice.hotels.placesInformation$token" class="t_red"></span>
+						</td>
+					</tr>
+					<tr valign="top" name="actualprice.flights$row">
+						<td valign="middle" align="center">
+							<img src="../Images/ic_avia.gif" width="18" height="18" border="0" alt=""></td>
+						<td>
+							<span name="actualprice.flights.description$token"></span>
+						</td>
+						<td>
+							<span name="actualprice.flights.placesInformation$token" class="t_red"></span>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<span class="t_red">* Внимание, заказ тура возможен при отсутствии примечания "Мест нет" для проживания и перелетов</span>
+				</div>
+				
+			</td>
+			<td width="15" style="background: url(../Images/bg19.gif) repeat-y left top">
+				<img src="../Images/e.gif" width="15" height="1" border="0"></td>
+		</tr>
+		<tr>
+			<td height="14">
+				<img src="../Images/bg15.gif" width="15" height="14" border="0"></td>
+			<td style="background: url(../Images/bg16.gif) repeat-x left top">
+				<img src="../Images/e.gif" width="1" height="1" border="0"></td>
+			<td>
+				<img height="14" src="../Images/bg17.gif" width="15" border="0"></td>
+		</tr>
+	</table>
+	
+	<div class="m_block" align="center" >
+		<a href="javascript:void(0);" id="buttonActualize" onclick="javascript:getActualize();"><b>ОФОРМИТЬ ЗАКАЗ</b></a>
+	</div>
+	
+	<!-- Заказ тура -->
+	<form name="booking" method="post" id="booking" style="display:none">
+		<table cellspacing="0" cellpadding="0" width="100%" border="0">
+			<tr valign="bottom">
+				<td height="14">
+					<img height="6" src="../Images/bg20.gif" width="15" border="0"></td>
+				<td style="background: url(../Images/bg21.gif) repeat-x left bottom">
+					<span class="h1">
+						<img height="7" src="../Images/ic1.gif" width="7" border="0">&nbsp;&nbsp; ЗАКАЗ ТУРА</span></td>
+				<td>
+					<img height="6" src="../Images/bg22.gif" width="15" border="0"></td>
+			</tr>
+			<tr valign="top">
+				<td width="15" style="background: url(../Images/bg18.gif) repeat-y left top">
+					<img src="../Images/e.gif" width="15" height="1" border="0"></td>
+				<td width="100%">
+					<table width="100%">
+						<tr>
+							<td width="250px" nowrap>
+								Контактное лицо: *</td>
+							<td width="300px">
+								<input type="text" id="NameTextBox" name="contactPerson" style="width: 300px;" maxlength="50"></td>
+							<td>
+								<span id="NameRequiredFieldValidator" controltovalidate="NameTextBox" errormessage="Обязательное поле" evaluationfunction="RequiredFieldValidatorEvaluateIsValid" initialvalue="" style="color: Red; display: none;">Обязательное поле</span> <span id="NameRegularExpressionValidator" controltovalidate="NameTextBox" errormessage="Ошибка заполнения поля" evaluationfunction="RegularExpressionValidatorEvaluateIsValid" validationexpression=".*" style="color: Red; display: none;">Ошибка заполнения поля</span>
+							</td>
+						</tr>
+						<tr>
+							<td width="250px" nowrap>
+								Контактный телефон: *</td>
+							<td width="300px">
+								<input type="text" id="contactPhoneCountry" name="contactPhoneCountry" style="width: 30px;" maxlength="4" onclick="return contactPhoneCountry_onclick()">
+								<!-- Валидатор кода страны на необходимость заполнения -->
+								<span id="Phone1RequiredFieldValidator" controltovalidate="contactPhoneCountry" errormessage="*" evaluationfunction="RequiredFieldValidatorEvaluateIsValid" initialvalue="" style="color: Red; display: none;">*</span>
+								<!-- Валидатор кода страны на выражение -->
+								<span id="Phone1RegularExpressionValidator" controltovalidate="contactPhoneCountry" errormessage="*" evaluationfunction="RegularExpressionValidatorEvaluateIsValid" validationexpression="\+\d{1,3}" style="color: Red; display: none">*</span>
+								<input type="text" id="contactPhoneCity" name="contactPhoneCity" style="width: 50px;" maxlength="7">
+								<!-- Валидатор кода города на необходимость заполнения -->
+								<span id="Phone2RequiredFieldValidator" controltovalidate="contactPhoneCity" errormessage="*" evaluationfunction="RequiredFieldValidatorEvaluateIsValid" initialvalue="" style="color: Red; display: none;">*</span>
+								<!-- Валидатор кода города на выражение -->
+								<span id="Phone2RegularExpressionValidator" controltovalidate="contactPhoneCity" errormessage="*" evaluationfunction="RegularExpressionValidatorEvaluateIsValid" validationexpression="\(\d{1,5}\)" style="color: Red; display: none">*</span>
+								<input type="text" id="contactPhoneNumber" name="contactPhoneNumber" maxlength="15" size="30" onclick="return contactPhoneNumber_onclick()" />
+							</td>
+							<td>
+								<!-- Валидатор номера на необходимость заполнения-->
+								<span id="Phone3RequiredFieldValidator" controltovalidate="contactPhoneNumber" errormessage="Обязательное поле" evaluationfunction="RequiredFieldValidatorEvaluateIsValid" initialvalue="" style="color: Red; display: none">Обязательное поле</span>
+								<!-- Валидатор номера на выражение -->
+								<span id="Phone3RegularExpressionValidator" controltovalidate="contactPhoneNumber" errormessage="Ошибка заполнения поля" evaluationfunction="RegularExpressionValidatorEvaluateIsValid" validationexpression="\s*\d{1}((?:\s*-\s*|\s*){0,1}\d{1,14})*\s*" style="color: Red; display: none">Ошибка заполнения поля</span>
+							</td>
+						</tr>
+						<tr>
+							<td width="250px" nowrap>
+								Электронный адрес: *</td>
+							<td width="300px">
+								<input type="text" id="MailAddressTextBox" name="contactMail" style="width: 300px;" maxlength="50"></td>
+							<td>
+								<span id="MailRequiredFieldValidator" controltovalidate="MailAddressTextBox" errormessage="Обязательное поле" evaluationfunction="RequiredFieldValidatorEvaluateIsValid" initialvalue="" style="color: Red; display: none;">Обязательное поле</span> <span id="MailRegularExpressionValidator" controltovalidate="MailAddressTextBox" errormessage="Ошибка заполнения поля" evaluationfunction="RegularExpressionValidatorEvaluateIsValid" validationexpression="^[a-zA-Z_.0-9\-]+@[a-zA-Z_.0-9\-]+?\.[a-zA-Z]{2,3}$" style="color: Red; display: none;">Ошибка заполнения поля</span>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" width="250px" nowrap>
+								Примечание (не более 200 символов):</td>
+							<td width="300px">
+								<textarea rows="3" name="description" id="DescriptionTextEdit" style="width: 300px;"></textarea>
+						</tr>
+						<tr>
+							<td>
+								<span id="WaitingControl" style="display: none;">
+									<img src="../Images/snake.gif">&nbsp;Идет отправка заказа....</span>
+							</td>
+							<td align="right">
+								<span id="buttonSend">
+									<img style="cursor: pointer" src="../Images/button_order.gif" border="0" alt="Сделать заказ" class="priceinformation_button" onclick="javascript:if (typeof(Page_ClientValidate) != 'function' ||  Page_ClientValidate()) send();">
+								</span>
+							</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td colspan="3">
+								<span id="BookingMessage" class="t_red"></span>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="3">
+								<span class="t_red">* Поля отмеченные звездочкой обязательны для заполнения</span></td>
+						</tr>
+					</table>
+				</td>
+				<td width="15" style="background: url(../Images/bg19.gif) repeat-y left top">
+					<img src="../Images/e.gif" width="15" height="1" border="0"></td>
+			</tr>
+			<tr>
+				<td height="14">
+					<img src="../Images/bg15.gif" width="15" height="14" border="0"></td>
+				<td style="background: url(../Images/bg16.gif) repeat-x left top">
+					<img src="../Images/e.gif" width="1" height="1" border="0"></td>
+				<td>
+					<img height="14" src="../Images/bg17.gif" width="15" border="0"></td>
+			</tr>
+		</table>
+	</form>
+	<script>
+			function onloadwindow()
+			{
+			    onloadPriceDetails();
+			}
+	</script>
+</div>
+</body>
+</html>

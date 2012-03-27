@@ -1,0 +1,39 @@
+<div class="header">
+  <a href="/" title="На главную">
+    <img class="logo" src="/images/logo.png" width="215" height="44" alt="На главную"/>
+  </a>
+  <ul class="topMenu">
+    <li class="noDelimiter">
+      <a href="/" title="На главную"><img src="/images/i-home.gif" width="11" height="11" alt="На главную"/></a></li>
+    <li class="noDelimiter">
+      <a href="/sitemap" title="Карта сайта"><img src="/images/i-sitemap.gif" width="11" height="11" alt="Карта сайта"/></a>
+    </li>
+    <li class="noDelimiter">Москва &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  +7 (495) 725-56-11 </br> Санкт-Петербург &nbsp;  &nbsp; +7 (812) 385-77-25 </li>
+    <li><a href="/static_pages/contacts">Контакты</a></li>
+    <li><a href="/static_pages/pay_info">Информация по оплате</a></li>
+    <li><a href="/static_pages/partners">Партнеры</a></li>
+    <% if user_signed_in? %>
+        <li>
+          <%= link_to 'Хрон', chronopay_links_path %> |
+          <%= link_to 'Автодп.', auto_complete_path %> |
+          <a href="/static_pages">Страницы</a> |
+          <%= link_to "Выйти", destroy_user_session_path %>
+        </li>
+    <% end %>
+
+
+  </ul>
+  <div class="topAdvert">
+    <h2>Покупай сейчас - улетай через час !</h2>
+
+    <div class="slider">
+      <div class="wrapper">
+        <div class="topSlider">
+          <iframe id="topSlider" frameborder="0" scrolling="no" allowtransparency="true" src="/Html/Showcase.htm?columns_sm=5&rows_sm=1&textPosition_sm=right"></iframe>
+        </div>
+        <a href="#" onClick="getPrev(); return false;" class="left"></a>
+        <a href="#" onClick="getNext(); return false;" class="right"></a>
+      </div>
+    </div>
+  </div>
+</div>

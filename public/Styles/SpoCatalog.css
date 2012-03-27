@@ -1,0 +1,60 @@
+body
+{
+}
+/* РЎС‚РёР»СЊ РїРѕР»СЏ РІРІРѕРґР° РґР°С‚С‹ "СЃ" */
+.date-from-text {width: 80px;}
+/* РЎС‚РёР»СЊ РїРѕР»СЏ РІРІРѕРґР° РґР°С‚С‹ "РїРѕ" */
+.date-to-text {width: 80px;}
+
+/* Р Р°Р·РјРµСЂС‹ РґР»СЏ РІС‹РїР°РґР°СЋС‰РµРіРѕ СЃРїРёСЃРєР° СЃС‚СЂР°РЅ */
+#comboDestinationCountry_base, #comboDestinationCountry_base .e-combobox 
+/* РћСЃРЅРѕРІРЅРѕРµ РѕРєРЅРѕ */
+{width: 200px; height: 20px} 
+#comboDestinationCountry_base .e-combobox .e-combobox-input 
+/* РџРѕР»Рµ РІРІРѕРґР° С‚РµРєСЃС‚Р°, РјРµРЅСЊС€Рµ РѕСЃРЅРѕРІРЅРѕРіРѕ РѕРєРЅР° РЅР° С€РёСЂРёРЅСѓ РєР°СЂС‚РёРЅРєРё СЃРѕ СЃС‚СЂРµР»РѕС‡РєРѕР№ */
+{width: 178px; height: 20px}
+#comboDestinationCountry_list 
+/* Р’С‹СЃРѕС‚Р° РІС‹РїР°РґР°СЋС‰РµРіРѕ СЃРїРёСЃРєР° */
+{height: 100px}
+
+/* Р Р°Р·РјРµСЂС‹ РґР»СЏ РІС‹РїР°РґР°СЋС‰РµРіРѕ СЃРїРёСЃРєР° РіРѕСЂРѕРґРѕРІ РІС‹Р»РµС‚Р° */
+#comboDepartureCity_base, #comboDepartureCity_base .e-combobox 
+/* РћСЃРЅРѕРІРЅРѕРµ РѕРєРЅРѕ */
+{width: 200px; height: 20px} 
+#comboDepartureCity_base .e-combobox .e-combobox-input 
+/* РџРѕР»Рµ РІРІРѕРґР° С‚РµРєСЃС‚Р°, РјРµРЅСЊС€Рµ РѕСЃРЅРѕРІРЅРѕРіРѕ РѕРєРЅР° РЅР° С€РёСЂРёРЅСѓ РєР°СЂС‚РёРЅРєРё СЃРѕ СЃС‚СЂРµР»РѕС‡РєРѕР№ */
+{width: 178px; height: 20px}
+#comboDepartureCity_list 
+/* Р’С‹СЃРѕС‚Р° РІС‹РїР°РґР°СЋС‰РµРіРѕ СЃРїРёСЃРєР° */
+{height: 200px}
+
+.currentPageNumber
+{
+	padding:5px;
+	color:#F6821B;
+}
+
+.pageNumber
+{
+	padding:5px;
+	cursor:pointer;
+	text-decoration:underline;
+	color:#F6821B;
+}
+
+.spoListHeader
+{
+	text-align:center;
+	font-weight:bold;
+}
+
+.cellSpoName
+{
+	border: lightgrey 1px solid;
+}
+
+.cellInfo
+{
+	text-align:center;
+	border: lightgrey 1px solid;
+}

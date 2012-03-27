@@ -1,0 +1,128 @@
+<!-- 1.2.0 -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title>Форма поиска</title> 
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta http-equiv="content-language" content="ru">
+		<meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema">
+	
+		<!-- Системная библиотека -->
+		<script src="../js/System/System.js" type="text/javascript"></script>
+		<!-- Библиотека для работы с датами -->
+		<script src="../js/System/DateTime.js" type="text/javascript"></script>
+		<!-- Внешняя системная библиотека стороннего разработчика -->
+		<script src="../js/ajs/AJS.js" type="text/javascript"></script>
+		<script src="../js/ajs/AJS_fx.js" type="text/javascript"></script>
+		<!-- Оригинальный стиль BRONNI.RU -->
+		<link href="../Styles/Design.css" rel="stylesheet"></link>
+		<!-- Библиотека доступа к данным с сайта BRONN.RU -->
+		<script src="../js/System/Ajax.js" type="text/javascript"></script>
+		<!-- Библиотека доступа к данным в формате JSON-->
+		<script src="../js/Json/json.js" type="text/javascript"></script>
+		<!-- Прокси для авторизации -->
+		<script src="../js/Proxy/SecurityProxy.js" type="text/javascript"></script>
+		<!-- Прокси для получения данных о справочниках -->
+		<script src="../js/Proxy/DictionariesProxy.js" type="text/javascript"></script>
+		<!-- Библиотеки элементов управления -->
+		<!-- ComboBox -->
+		<script src="../js/Controls/ComboBox.js"></script>
+		<!-- Общий стиль для всех выпадающих списков -->
+		<link href="../Styles/Controls/ComboBox.css" rel="stylesheet"></link>
+		<!-- ListBox -->
+		<script src="../js/Controls/ListBox.js"></script>
+		<!-- Общий стиль для всех выпадающих списков -->
+		<link href="../Styles/Controls/ListBox.css" rel="stylesheet"></link>
+		<!-- Calendar -->
+		<script src="../js/Controls/Calendar.js"></script>
+		<!-- Общий стиль для всех календарей -->
+		<link href="../Styles/Controls/calendar/skins/theme.css" rel="stylesheet"></link>
+		<!-- Текущие визуальные настройки элементов управления -->
+		<link id="styles" href="../Styles/SearchForm_small.css" type="text/css" rel="stylesheet">
+		<!-- Начальные установки модуля поиска -->
+		<script src="../js/Setup.js" type="text/javascript"></script>
+		<!-- Данные -->
+		<script src="../js/DataSource/DictionariesDataSource.js" type="text/javascript"></script>
+		<!-- События элементов управления -->
+		<script src="../js/Events.js" type="text/javascript"></script>
+		<!-- Библиотека jQuery -->
+		<script src="../js/System/jquery.js" type="text/javascript"></script>
+		<script src="../js/PageScript/SearchForm.js" type="text/javascript"></script>
+	
+	</head>
+	<body id="docBody" onload="onloadwindow()">
+		<form name="search" id="search" method="post">
+			<div id="search_module">
+				<table id="Table2" cellspacing="2" cellpadding="0" align="left" border="0" class="sear4">
+					<tr>
+						<td style="vertical-align:top">
+						    <div id="TourTypeComboBoxLabel">
+								Тип тура:</div>
+							<div id="DepartureCityComboBoxLabel">
+								Город вылета:</div>
+							<div id="DestinationCountryComboBoxLabel">
+								Направление:</div>															
+						</td>
+						<td id="DestinationCitiesListBoxLabel" colspan="2">
+							Города:<br /></td>
+					</tr>
+					<tr>
+						<td id="MealsListBoxLabel">
+							Питание:<br /></td>
+						<td id="StarsListBoxLabel">
+							Звездность:<br /></td>
+						<td id="HotelsListBoxLabel">
+							Отель:<br /></td>
+					</tr>
+					<tr>
+						<td>
+							<div>
+								Ночи от&nbsp;<input name="NightsFromTextBox" id="NightsFromTextBox" class="nights-from-text" />&nbsp;до&nbsp;<input name="NightsToTextBox" id="NightsToTextBox" class="nights-to-text" /></div>
+						</td>
+						<td colspan="2">
+							<div>
+								Взрослые:&nbsp;<input name="AdultTextBox" id="AdultTextBox" class="adult-text" />&nbsp;&nbsp;&nbsp;Дети:&nbsp;<input name="ChildTextBox" id="ChildTextBox" class="child-text" /></div>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="3">
+							<div>
+								Дата заезда c&nbsp;<input name="DateFromTextBox" id="DateFromTextBox" class="date-from-text" /><img id="DateFromImage" src="../Images/calendar.gif" style="cursor: pointer" alt="Открыть календарь" />&nbsp;по&nbsp;<input name="DateToTextBox" id="DateToTextBox" class="date-to-text" /><img id="DateToImage" src="../Images/calendar.gif" style="cursor: pointer" alt="Открыть календарь" /></div>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							Цена от&nbsp;<input name="PriceFromTextBox" id="PriceFromTextBox" class="price-from-text" />&nbsp;до&nbsp;<input name="PriceToTextBox" id="PriceToTextBox" class="price-to-text" />
+						</td>
+						<td align="right">
+							<div id="CurrencyComboBoxLabel" style="float: left;">
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="3" align="right">
+							<a href="javascript:OpenResults()">
+								<img height="18" alt="ИСКАТЬ" src="../Images/button_search.gif" width="58" border="0"></a>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="9" align="right">
+							<div id="WaitingControl">
+								<img src="../Images/snake.gif" alt="" /></div>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</form>
+		<script>
+			function onloadwindow()
+			{
+				onloadSearchForm();
+			}
+		</script>
+	</body>
+</html>

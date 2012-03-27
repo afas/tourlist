@@ -1,0 +1,19 @@
+<div class="countries">
+    <h2>Описание стран</h2>
+    <ul>
+      <% @countries.each do |country| %>
+          <li class="even"><!-- каждый второй элемент имеет отличный стиль -->
+              <a href="#"><%= link_to image_tag(country.image.url(:small), :class => "pic"), country %></a>
+              <h3><%= link_to country.name, country %></h3>
+              <p><%= country.description %></p>
+          </li>
+      <% end %>
+    </ul>
+    <div><a href="/countries"><strong>Остальные страны</strong></a></div>
+     <br/>
+
+
+
+
+
+</div>

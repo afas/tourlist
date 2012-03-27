@@ -1,0 +1,13 @@
+<%= onlina_table('ДОГОВОР') do %>
+    <div class="contract">
+      <%= render 'dogovor_text' %>
+    </div>
+<% end %>
+<div id="flag">
+  <%= label_tag 'contract_i_agree_', 'Согласен с условиями договора' %> <%= mark_required(@contract, :i_agree) %>
+  <%= hidden_field_tag 'contract[i_agree]', 0 %>
+  <%= check_box_tag 'contract[i_agree]', 1, @contract.i_agree == '1', :id => 'contract_i_agree_' %>
+  <% if @contract.i_agree == '0' %>
+      <span style="color: red;">Обязательное поле</span>
+  <% end %>
+</div>

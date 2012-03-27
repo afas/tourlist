@@ -1,0 +1,106 @@
+<form name="search" id="search" class="searchTour" method="post">
+
+  <fieldset>
+    <div class="row" style="z-index: 10;">
+      <div class="item">
+        <div id="DepartureCityComboBoxLabel">
+          <label>Город вылета:</label>
+        </div>
+        <i>&rarr;</i>
+      </div>
+      <div class="item">
+        <div id="DestinationCountryComboBoxLabel">
+          <label>Направление:</label>
+        </div>
+      </div>
+      <div class="item city-select">
+        <div id="DestinationCitiesListBoxLabel">
+          <label>Город:</label>
+        </div>
+      </div>
+    </div>
+    <div class="row" style="width: 275px; z-index: 9;">
+      <div class="item short">
+        <label>Взрослых:</label>
+        <input name="AdultTextBox" id="AdultTextBox" class="adult-text"/>
+      </div>
+      <div class="item short">
+        <label>Детей:</label>
+        <input name="ChildTextBox" id="ChildTextBox" class="child-text"/>
+      </div>
+      <div class="item short">
+        <label>Ночей от:</label>
+        <input name="NightsFromTextBox" id="NightsFromTextBox" class="nights-from-text"/>
+      </div>
+      <div class="item short">
+        <label>до:</label>
+        <input name="NightsToTextBox" id="NightsToTextBox" class="nights-to-text"/>
+      </div>
+    </div>
+    <div class="row" style="z-index: 8;">
+      <div class="item">
+        <label>Отправление с:</label>
+        <input name="DateFromTextBox" id="DateFromTextBox" class="date-from-text"/><img id="DateFromImage" src="../Images/calendar.gif" style="cursor: pointer" alt="Открыть календарь"/>
+        <i>&rarr;</i>
+      </div>
+      <div class="item">
+        <label>по:</label>
+        <input name="DateToTextBox" id="DateToTextBox" class="date-to-text"/><img id="DateToImage" src="../Images/calendar.gif" style="cursor: pointer" alt="Открыть календарь"/>
+      </div>
+      <div class="item">
+        <div id="TourTypeComboBoxLabel">
+          <label>Тип тура:</label>
+        </div>
+      </div>
+    </div>
+    <div class="row" style="z-index: 7;">
+      <div class="item">
+        <div id="MealsListBoxLabel">
+          <label>Питание:</label>
+        </div>
+      </div>
+      <div class="item" style="width: 85px !important;">
+        <div id="StarsListBoxLabel">
+          <label>Звездность:</label>
+        </div>
+      </div>
+      <div class="item">
+        <div id="HotelsListBoxLabel">
+          <label>Отель:</label>
+        </div>
+      </div>
+    </div>
+    <div class="row" style="z-index: 6;">
+      <div class="item short">
+        <label>Цена от:</label>
+        <input name="PriceFromTextBox" id="PriceFromTextBox" class="price-from-text"/>
+      </div>
+      <div class="item short">
+        <label>до:</label>
+        <input name="PriceToTextBox" id="PriceToTextBox" class="price-to-text"/>
+      </div>
+      <div class="item short">
+        <div id="CurrencyComboBoxLabel" style="float: left;">
+          <label>Валюта:</label>
+        </div>
+      </div>
+      <!--<a href="javascript:OpenResultsFrame()">-->
+      <!--<img height="18" alt="ИСКАТЬ" src="../Images/button_search.gif" width="58" border="0"></a>-->
+
+      <div class="item submit" style="float:right;">
+        <!--<a href="javascript:OpenResultsFrame()">-->
+        <a href="javascript:OpenResults()">
+          <img height="18" alt="ИСКАТЬ" src="../Images/button_search.gif" width="58" border="0">
+        </a>
+      </div>
+
+      <!--<div class="item advancedSearch">-->
+      <!--<a href="#">Расширенный поиск</a>-->
+      <!--</div>-->
+    </div>
+  </fieldset>
+
+</form>
+     <br/> <br/>
+
+<%= render 'how_to_book' %>

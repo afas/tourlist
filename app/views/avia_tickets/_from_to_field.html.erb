@@ -1,0 +1,8 @@
+<dl class="begin">
+  <dt><%= f.label("#{field}_begin", "#{name} отправления") %> <%= mark_required(f.object, "#{field}_begin") %></dt>
+  <dd><%= f.text_field("#{field}_begin", options_begin) %></dd>
+</dl>
+<dl class="end">
+  <dt><%= f.label("#{field}_end", "#{name} прибытия") %> <%= mark_required(f.object, "#{field}_end") %></dt>
+  <dd><%= f.text_field("#{field}_end", options_end) %></dd>
+</dl>

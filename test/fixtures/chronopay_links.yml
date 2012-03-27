@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  pay_product_id: MyString
+  product_price: 1.5
+  sign: MyString
+
+two:
+  pay_product_id: MyString
+  product_price: 1.5
+  sign: MyString

@@ -1,0 +1,82 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Баннер</title>
+    <!-- Системная библиотека -->
+
+    <script src="../js/System/System.js" type="text/javascript"></script>
+
+    <!-- Библиотека для работы с датами -->
+
+    <script src="../js/System/DateTime.js" type="text/javascript"></script>
+
+    <!-- Внешняя системная библиотека стороннего разработчика -->
+
+    <script src="../js/ajs/AJS.js" type="text/javascript"></script>
+
+    <script src="../js/ajs/AJS_fx.js" type="text/javascript"></script>
+
+    <!-- Оригинальный стиль BRONNI.RU -->
+    <link href="../Styles/Design.css" rel="stylesheet"></link>
+    <!-- Библиотека доступа к данным с сайта BRONN.RU -->
+
+    <script src="../js/System/Ajax.js" type="text/javascript"></script>
+
+    <!-- Библиотека доступа к данным в формате JSON-->
+
+    <script src="../js/Json/json.js" type="text/javascript"></script>
+
+    <!-- Прокси для авторизации -->
+
+    <script src="../js/Proxy/SecurityProxy.js" type="text/javascript"></script>
+
+    <!-- Прокси для получения данных о справочниках -->
+
+    <script src="../js/Proxy/DictionariesProxy.js" type="text/javascript"></script>
+
+    <!-- Библиотеки элементов управления -->
+    <!-- ComboBox -->
+
+    <script type="text/javascript" src="../js/Controls/ComboBox.js"></script>
+
+    <!-- Общий стиль для всех выпадающих списков -->
+    <link href="../Styles/Controls/ComboBox.css" rel="stylesheet" />
+    <!-- Текущие визуальные настройки элементов управления -->
+    <link id="styles" href="../Styles/SearchForm_std.css" type="text/css" rel="stylesheet" />
+    <!-- Начальные установки модуля поиска -->
+
+    <script src="../js/Setup.js" type="text/javascript"></script>
+
+    <!-- Данные -->
+
+    <script src="../js/DataSource/DictionariesDataSource.js" type="text/javascript"></script>
+
+    <!-- События элементов управления -->
+
+    <script src="../js/Events.js" type="text/javascript"></script>
+
+    <!-- Библиотека jQuery -->
+
+    <script src="../js/System/jquery.js" type="text/javascript"></script>
+
+    <script src="../js/PageScript/SearchForm_min.js" type="text/javascript"></script>
+
+</head>
+<body id="docBody" onload="onloadSearchForm()">
+    <table id="Table" border="0" style="background-image: url('../Images/banner.png');
+        width: 700; height: 90; border-style: hidden">
+        <tr>
+            <td id="DepartureCityComboBoxLabel" style="padding-left: 366; padding-top: 25">
+            </td>
+            <td rowspan="2" style="padding-top: 28; padding-right: 15">
+                <div style="width: 105; height: 38; border-style: hidden; cursor: pointer" onclick="javascript:OpenResults()">
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td id="DestinationCountryComboBoxLabel" style="padding-left: 366;">
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

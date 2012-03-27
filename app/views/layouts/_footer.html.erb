@@ -1,0 +1,33 @@
+<div class="footer">
+  <div class="inner">
+    <div class="responses">
+      <!--<h2>Витрина туров</h2>-->
+      <iframe id="mainSearch" frameborder="0" scrolling="no" allowtransparency="true" height="220" width="100%" style="margin-left: -12px;" src="/Html/Showcase.htm?columns_sm=8&rows_sm=1&textPosition_sm=bottom"></iframe>
+    </div>
+     <hr/>
+
+
+
+    <div class="realFooter">
+      <div class="copyleft">
+        <p>&copy; 2009&ndash;2011 &laquo;Onlina&raquo;. Все права защищены.</p>
+
+        <div class="counters"></div>
+      </div>
+      <ul class="bottomMenu">
+        <li><a href="/static_pages/partners">Наши партнеры</a></li>
+        <li><a href="/static_pages/contacts">Контакты</a></li>
+        <!--<li><a href="/static_pages/sitemap">Карта сайта</a></li>-->
+      </ul>
+      <ul class="bottomMenu">
+        <% if user_signed_in? %>
+            <li>
+                <%= link_to "Выйти", destroy_user_session_path %>
+              </li>
+          <% end %>
+      </ul>
+
+
+    </div>
+  </div>
+</div>

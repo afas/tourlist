@@ -1,0 +1,46 @@
+<% content_for(:head) do %>
+    <script type="text/javascript">
+        $(function() {
+            $('#frameResult').load(function() {
+//                $('#frameResult').contents().find('form#booking').show();
+
+                $('#frameResult').contents().find('input[name=contactPerson]').val('<%= @contract.full_name %>');
+                $('#frameResult').contents().find('input[name=contactPhoneCountry]').val('<%= @contract.phone_country %>');
+                $('#frameResult').contents().find('input[name=contactPhoneCity]').val('<%= @contract.phone_city %>');
+                $('#frameResult').contents().find('input[name=contactPhoneNumber]').val('<%= @contract.phone_number %>');
+                $('#frameResult').contents().find('input[name=contactMail]').val('<%= @contract.email %>');
+                $('#frameResult').contents().find('textarea[name=description]').val('<%= @contract.description %>');
+            });
+        });
+    </script>
+<% end %>
+
+
+<div class="leftColumn">
+  <div class="inner">
+    <%= render :partial => 'layouts/top10_countries' %>
+  </div>
+</div>
+<div class="mainColumn">
+  <div class="inner">
+    <fieldset>
+      <div id="accordion">
+        <h3 id="cart" class="active">1. <a href="#">Корзина</a></h3>
+
+        <div>
+          <iframe id="frameResult" frameborder="0" scrolling="auto" allowtransparency="true" height="500" width="100%" src="/Html/PriceDetails.htm"></iframe>
+        </div>
+        <h3 id="passport" class="passive">2. <a href="#">Личные данные пользователя покупки туристической путевки</a>
+        </h3>
+
+        <div><%= render 'form' %></div>
+        <h3 id="pay" class="passive">3. <a href="#">Оплата выбранного тура</a></h3>
+        <!--<p>Для начала оформления необходимо оплатить туры</p>-->
+        <div id="cronopay_layout" align="center">
+          <%= render chronopay_template %>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+</div>
+<div class="clear"></div>

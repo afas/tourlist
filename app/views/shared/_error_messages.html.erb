@@ -1,0 +1,11 @@
+<% if target.errors.any? %>
+<div id="error_explanation">
+  <h2><%= t('errors.template.header', :count => target.errors.size,
+            :model => t("activerecord.capitalized_models.#{target.class.to_s.singularize.underscore}")) %>:</h2>
+  <ul>
+  <% target.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+  </ul>
+</div>
+<% end %>

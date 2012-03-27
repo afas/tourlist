@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<title>Форма поиска</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta http-equiv="content-language" content="ru">
+	<meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema">
+	<!-- Оригинальный стиль BRONNI.RU -->
+	<link href="../Styles/Design.css" rel="stylesheet"></link>
+	<!-- Системная библиотека -->
+	<script src="../js/System/System.js" type="text/javascript"></script>
+	<!-- Библиотека для работы с датами -->
+	<script src="../js/System/DateTime.js" type="text/javascript"></script>
+	<!-- Начальные установки модуля поиска -->
+	<script src="../js/Setup.js" type="text/javascript"></script>
+
+	<script>
+		function FindPrice() {
+			var idControl = document.getElementById("SearchPriceControl_TourCode");
+			if (!idControl || idControl.value.replace(/\s/g,"") == "") return;
+			var queryString = "?priceId_sm=" + idControl.value.replace(/\s/g,"") + "&currencyId_sm=" + DefaultCurrency;
+			windowOpen(viewPage + queryString, viewPageWidth, viewPageHeight, openViewPageInNewWindow);
+		}
+	</script>
+</head>
+<body>
+<div id="contentBody">
+	<form name="search" id="search" method="post">
+		<table cellspacing="0" cellpadding="0" border="0">
+			<tr valign="bottom">
+				<td height="14"><img height="3" src="../Images/bg12.gif" width="15" border="0"></td>
+				<td style="background: url(../Images/bg13.gif) repeat-x left bottom">
+					<span class="h1"><img height="7" src="../Images/ic1.gif" width="7" border="0">&nbsp;&nbsp;ПОИСК ПО НОМЕРУ ТУРА</span></td>
+				<td><img height="3" src="../Images/bg14.gif" width="15" border="0"></td>
+			</tr>
+			<tr bgcolor="#f4f4f4">
+				<td height="11"><img height="11" src="../Images/bg9.gif" width="15" border="0"></td>
+				<td><img height="1" src="../Images/e.gif" width="1" border="0"></td>
+				<td><img height="11" src="../Images/bg11.gif" width="15" border="0"></td>
+			</tr>
+			<tr valign="top">
+				<td width="15" style="background: url(../Images/bg4.gif) #f4f4f4 repeat-y left top"><img src="../Images/e.gif" width="15" height="1" border="0"></td>
+				<td bgcolor="#f4f4f4">
+					<table id="Table2" cellspacing="0" cellpadding="0" align="center" border="0">
+						<tr>
+							<td valign="bottom">
+								&nbsp;Номер тура:<br>
+								<input type="text" name="SearchPriceControl$TourCode" id="SearchPriceControl_TourCode" class="" />
+							</td>
+							<td valign="bottom">
+								<div style="float:right; padding-left:4px">
+									<a href="javascript:void(0)"><img alt="ИСКАТЬ" src="../Images/go.gif" onclick="FindPrice()" height="18" width="18" border="0"></a>
+								</div>
+							</td>
+						</tr>
+					</table>					
+				</td>
+				<td width="15" style="background: url(../Images/bg5.gif) #f4f4f4 repeat-y left top"><img src="../Images/e.gif" width="15" height="1" border="0"></td>
+			</tr>
+			<tr bgcolor="#f4f4f4">
+				<td height="14"><img src="../Images/bg6.gif" width="15" height="14" border="0"></td>
+				<td style="background: url(../Images/bg8.gif) #f4f4f4 repeat-x left top"><img src="../Images/e.gif" width="1" height="1" border="0"></td>
+				<td><img height="14" src="../Images/bg7.gif" width="15" border="0"></td>
+			</tr>
+		</table>
+	</form>
+</div>
+</body>
+</html>

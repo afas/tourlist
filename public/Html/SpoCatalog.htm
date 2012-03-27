@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+	<title>Форма поиска по СПО</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta http-equiv="content-language" content="ru">
+	<meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema">
+	<!-- Системная библиотека -->
+	<script src="../js/System/System.js" type="text/javascript"></script>
+	<!-- Библиотека для работы с датами -->
+	<script src="../js/System/DateTime.js" type="text/javascript"></script>
+	<!-- Внешняя системная библиотека стороннего разработчика -->
+	<script src="../js/ajs/AJS.js" type="text/javascript"></script>
+	<script src="../js/ajs/AJS_fx.js" type="text/javascript"></script>
+	<!-- Оригинальный стиль BRONNI.RU -->
+	<link href="../Styles/Design.css" rel="stylesheet"></link>
+	<!-- Библиотека доступа к данным с сайта BRONN.RU -->
+	<script src="../js/System/Ajax.js" type="text/javascript"></script>
+	<!-- Библиотека доступа к данным в формате JSON-->
+	<script src="../js/Json/json.js" type="text/javascript"></script>
+	<!-- Прокси для авторизации -->
+	<script src="../js/Proxy/SecurityProxy.js" type="text/javascript"></script>
+	<!-- Прокси для получения данных о справочниках -->
+	<script src="../js/Proxy/DictionariesProxy.js" type="text/javascript"></script>
+	<!-- Прокси для получения данных по ценам -->
+	<script src="../js/Proxy/PriceProxy.js" type="text/javascript"></script>
+	<!-- Библиотеки элементов управления -->
+	<!-- ComboBox -->
+	<script src="../js/Controls/ComboBox.js"></script>
+	<!-- Общий стиль для всех выпадающих списков -->
+	<link href="../Styles/Controls/ComboBox.css" rel="stylesheet"></link>
+	<!-- ListBox -->
+	<script src="../js/Controls/ListBox.js"></script>
+	<!-- Общий стиль для всех выпадающих списков -->
+	<link href="../Styles/Controls/ListBox.css" rel="stylesheet"></link>
+	<!-- Calendar -->
+	<script src="../js/Controls/Calendar.js"></script>
+	<!-- Общий стиль для всех календарей -->
+	<link href="../Styles/Controls/calendar/skins/theme.css" rel="stylesheet"></link>
+	<!-- Текущие визуальные настройки элементов управления -->
+	<link id="styles" href="../Styles/SpoCatalog.css" type="text/css" rel="stylesheet">
+	<!-- Начальные установки модуля поиска -->
+	<script src="../js/Setup.js" type="text/javascript"></script>
+	<!-- Данные -->
+	<script src="../js/DataSource/DictionariesDataSource.js" type="text/javascript"></script>
+	<script src="../js/DataSource/ResultsDataSource.js" type="text/javascript"></script>
+	<!-- События элементов управления -->
+	<script src="../js/Events.js" type="text/javascript"></script>
+	<!-- Библиотека jQuery -->
+	<script src="../js/System/jquery.js" type="text/javascript"></script>
+	<script src="../js/PageScript/SPOCatalog.js" type="text/javascript"></script>
+</head>
+<body id="docBody" onload="onloadwindow()">
+<div id="contentBody">
+	<form name="search" id="search" method="post">
+		<table cellspacing="0" cellpadding="0" width="100%" border="0">
+			<tr valign="bottom">
+				<td height="14">
+					<img height="3" src="../Images/bg12.gif" width="15" border="0"></td>
+				<td style="background: url(../Images/bg13.gif) repeat-x left bottom">
+					<span class="h1">
+						<img height="7" src="../Images/ic1.gif" width="7" border="0">&nbsp;&nbsp;ПОИСК СПЕЦПРЕДЛОЖЕНИЙ</span></td>
+				<td>
+					<img height="3" src="../Images/bg14.gif" width="15" border="0"></td>
+			</tr>
+			<tr bgcolor="#f4f4f4">
+				<td height="11">
+					<img height="11" src="../Images/bg9.gif" width="15" border="0"></td>
+				<td>
+					<img height="1" src="../Images/e.gif" width="1" border="0"></td>
+				<td>
+					<img height="11" src="../Images/bg11.gif" width="15" border="0"></td>
+			</tr>
+			<tr valign="top">
+				<td width="15" style="background: url(../Images/bg4.gif) #f4f4f4 repeat-y left top">
+					<img src="../Images/e.gif" width="15" height="1" border="0"></td>
+				<td width="100%" bgcolor="#f4f4f4">
+					<table>
+					    <tr>
+					        <td>
+					            Дата публикации с <input id="txtDateFrom" type="text" onchange="ChangeFirstDate()" class="date-to-text" />
+					            <img id="imgDateFrom" src="../Images/calendar.gif" style="cursor: pointer" alt="Открыть календарь" />
+					        </td>
+					        <td>
+					            по <input id="txtDateTo" type="text" class="date-from-text" />
+					            <img id="imgDateTo" src="../Images/calendar.gif" style="cursor: pointer" alt="Открыть календарь" />
+					        </td>
+					    </tr>
+					    <tr>
+					        <td id="cellDepartureCity">
+					            Город вылета :
+					        </td>
+					         <td id="cellDestinationCountry">
+					            Направление :
+					        </td>
+					    </tr>
+					    <tr>
+					        <td colspan="2" style="text-align:right">
+					            <img height="18" alt="ИСКАТЬ" src="../Images/button_search.gif" onclick="searchSpo()" style="cursor:pointer" width="58" border="0">
+					        </td>
+					    </tr>
+					    <tr>
+					        <td colspan="2">
+                                <div id="WaitingControl">
+                                    <img src="../Images/snake.gif" alt="" /></div>
+                            </td>
+					    </tr>
+					</table>
+					<div id="divPager" style="width:100%">
+		            </div>
+		            <div id="divResults" style="width:100%;padding-top:5px">
+		            </div>
+				</td>
+				<td width="15" style="background: url(../Images/bg5.gif) #f4f4f4 repeat-y left top">
+					<img src="../Images/e.gif" width="15" height="1" border="0"></td>
+			</tr>
+			<tr bgcolor="#f4f4f4">
+				<td height="14">
+					<img src="../Images/bg6.gif" width="15" height="14" border="0"></td>
+				<td style="background: url(../Images/bg8.gif) #f4f4f4 repeat-x left top">
+					<img src="../Images/e.gif" width="1" height="1" border="0"></td>
+				<td>
+					<img height="14" src="../Images/bg7.gif" width="15" border="0"></td>
+			</tr>
+		</table>		
+	</form>
+	<script>
+			function onloadwindow()
+			{
+				onloadSearchSPO();
+			}			
+	</script>
+</div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<%= onlina_table('ОПЛАТА ТУРА КРЕДИТНОЙ КАРТОЙ') do %>
+    <div align="center">
+
+      <form action="https://payments.chronopay.com/" method="POST">
+          <input type="hidden" name="product_id" value="<%= Tourlist::Application.product_id %>"/>
+          <input type="hidden" name="product_price" id="pay_product_price" value=""/>
+          <input type="hidden" name="cs1" id="pay_product_id" value="" />
+          <input type="hidden" name="cb_url" value="<%= build_callback_url(pm_callback_path) %>" />
+          <input type="hidden" name="success_url" value="<%= build_callback_url(pm_success_path) %>" />
+          <input type="hidden" name="decline_url" value="<%= build_callback_url(pm_failed_path) %>" />
+          <input type="hidden" name="sign" id="pay_product_sign" value=""/>
+          <input type="submit" value="Оплатить через ChronoPay"/>
+      </form>
+
+      <!--<form action="https://payments.chronopay.com/" method="POST">-->
+      <!--<input type="hidden" name="product_id" value="006224-0001-0001"/>-->
+      <!--<input type="hidden" name="product_price" id="pay_product_price" value=""/>-->
+      <!--<input type="hidden" name="cs1" id="pay_product_id" value="" />-->
+      <!--<input type="hidden" name="cb_url" value="http://tourlist.ru/payments/callback" />-->
+      <!--<input type="hidden" name="success_url" value="http://tourlist.ru/payments/success" />-->
+      <!--<input type="hidden" name="decline_url" value="http://tourlist.ru/payments/failed" />-->
+      <!--<input type="hidden" name="sign" id="pay_product_sign" value=""/>-->
+      <!--<input type="submit" value="Оплатить через ChronoPay"/>-->
+      <!--</form>-->
+    </div>
+<% end %>

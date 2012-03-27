@@ -1,0 +1,177 @@
+<!--<div class="leftColumn">-->
+<!--<div class="inner">-->
+<!--<%= render :partial => 'layouts/top10_countries' %>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="mainColumn">-->
+<!--<div class="inner">-->
+<!--<div class="content" style="padding:0 !important; margin:0 !important;">-->
+<!--<iframe id="frameResult" frameborder="0" scrolling="auto" allowtransparency="true" height="200" width="710" src="/Html/Results2.htm"></iframe>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+
+<% content_for(:head) do %>
+    <%=
+#        javascript_include_tag '/js/System/System.js',
+#                               '/js/System/DateTime.js',
+#                               '/js/ajs/AJS.js',
+#                               '/js/ajs/AJS_fx.js',
+#                               '/js/System/Ajax.js',
+#                               '/js/Json/json.js',
+#                               '/js/Proxy/SecurityProxy.js',
+#                               '/js/Proxy/DictionariesProxy.js',
+#                               '/js/Controls/ComboBox.js',
+#                               '/js/Controls/ListBox.js',
+#                               '/js/Controls/Calendar.js',
+#                               '/js/Controls/calendar/calendar.js',
+#                               '/js/Controls/calendar/calendar-helper.js',
+#                               '/js/Controls/calendar/lang/calendar-ru_win_.js',
+#                               '/js/Controls/calendar/calendar-setup.js',
+#                               '/js/Setup.js',
+#                               '/js/DataSource/DictionariesDataSource.js',
+#                               '/js/Events.js',
+#                               '/js/PageScript/SearchForm.js'
+    %>
+    <%= stylesheet_link_tag '/Styles/Design.css',
+                            '/Styles/Controls/ComboBox.css',
+                            '/Styles/Controls/calendar/skins/theme.css',
+                            '/Styles/SearchForm_small.css',
+                            '/Styles/Controls/ListBox.css'
+    %>
+<% end %>
+
+<div id="contentBody">
+  <!--<form name="search" id="search" method="post">-->
+    <!--<table cellspacing="0" cellpadding="0" width="100%" border="0">-->
+      <!--<tr valign="bottom">-->
+        <!--<td height="14">-->
+          <!--</td>-->
+        <!--<td>-->
+                <!--<span class="h1">-->
+                    <!--<img height="7" src="../Images/ic1.gif" width="7" border="0">&nbsp;&nbsp;ПОИСК ЦЕН</span></td>-->
+        <!--<td>-->
+          <!--</td>-->
+      <!--</tr>-->
+      <!--<tr bgcolor="#f4f4f4">-->
+        <!--<td height="11">-->
+          <!--</td>-->
+        <!--<td>-->
+          <!--<img height="1" src="../Images/e.gif" width="1" border="0"></td>-->
+        <!--<td>-->
+          <!--</td>-->
+      <!--</tr>-->
+      <!--<tr valign="top">-->
+        <!--<td width="15">-->
+          <!--<img src="../Images/e.gif" width="15" height="1" border="0"></td>-->
+        <!--<td width="100%" bgcolor="#f4f4f4">-->
+          <!--<table id="Table2" cellspacing="0" cellpadding="0" align="center" border="0">-->
+            <!--<tr>-->
+              <!--<td colspan="8">-->
+              <!--</td>-->
+              <!--<td colspan="1" id="TourTypeComboBoxLabel">&nbsp;Тип тура:<br/>-->
+              <!--</td>-->
+            <!--</tr>-->
+            <!--<tr valign="top">-->
+              <!--<td id="DepartureCityComboBoxLabel">-->
+                <!--&nbsp;Город вылета:<br/>-->
+              <!--</td>-->
+              <!--<td width="5">-->
+                <!--<img height="1" src="../Images/e.gif" width="5" border="0"></td>-->
+              <!--<td id="DestinationCountryComboBoxLabel">-->
+                <!--&nbsp;Направление:<br/>-->
+              <!--</td>-->
+              <!--<td width="5" rowspan="2">-->
+                <!--<img height="1" src="../Images/e.gif" width="5" border="0"></td>-->
+              <!--<td rowspan="2" id="MealsListBoxLabel">-->
+                <!--&nbsp;Питание:<br/>-->
+              <!--</td>-->
+              <!--<td width="5" rowspan="2">-->
+                <!--<img height="1" src="../Images/e.gif" width="5" border="0"></td>-->
+              <!--<td rowspan="2" id="StarsListBoxLabel">-->
+                <!--&nbsp;Звездность:<br/>-->
+              <!--</td>-->
+              <!--<td width="5" rowspan="2">-->
+                <!--<img height="1" src="../Images/e.gif" width="5" border="0"></td>-->
+              <!--<td rowspan="2" id="HotelsListBoxLabel">-->
+                <!--&nbsp;Отель:<br/>-->
+              <!--</td>-->
+            <!--</tr>-->
+            <!--<tr valign="bottom">-->
+              <!--<td>-->
+                <!--<br/>-->
+              <!--</td>-->
+              <!--<td width="5">-->
+                <!--<img height="1" src="../Images/e.gif" width="5" border="0"></td>-->
+              <!--<td id="DestinationCitiesListBoxLabel">-->
+                <!--&nbsp;Города:<br/>-->
+              <!--</td>-->
+            <!--</tr>-->
+            <!--<tr>-->
+              <!--<td colspan="10">-->
+                <!--<img height="7" src="../Images/e.gif" width="1" border="0"></td>-->
+            <!--</tr>-->
+            <!--<tr valign="middle">-->
+              <!--<td colspan="4">-->
+                <!--Взрослые:<input name="AdultTextBox" id="AdultTextBox" class="adult-text"/>&nbsp;&nbsp;Дети:<input name="ChildTextBox" id="ChildTextBox" class="child-text"/>-->
+              <!--</td>-->
+              <!--<td colspan="5">-->
+                <!--Продолжительность (ночей) от&nbsp;-->
+                <!--<input name="NightsFromTextBox" id="NightsFromTextBox" class="nights-from-text"/>-->
+                <!--&nbsp;до&nbsp;-->
+                <!--<input name="NightsToTextBox" id="NightsToTextBox" class="nights-to-text"/>-->
+              <!--</td>-->
+            <!--</tr>-->
+            <!--<tr>-->
+              <!--<td colspan="10">-->
+                <!--<img height="7" src="../Images/e.gif" width="1" border="0"></td>-->
+            <!--</tr>-->
+            <!--<tr valign="middle">-->
+              <!--<td colspan="4">-->
+                <!--Дата заезда-->
+                <!--c&nbsp;<input name="DateFromTextBox" id="DateFromTextBox" class="date-from-text" onchange="ChangeFirstDate()"/><img id="DateFromImage" src="../Images/calendar.gif" style="cursor: pointer" alt="Открыть календарь"/>&nbsp;по&nbsp;<input name="DateToTextBox" id="DateToTextBox" class="date-to-text"/><img id="DateToImage" src="../Images/calendar.gif" style="cursor: pointer" alt="Открыть календарь"/>-->
+              <!--</td>-->
+              <!--<td colspan="4">-->
+                <!--Цена&nbsp;от&nbsp;<input name="PriceFromTextBox" id="PriceFromTextBox" class="price-from-text"/>&nbsp;до&nbsp;<input name="PriceToTextBox" id="PriceToTextBox" class="price-to-text"/>-->
+              <!--</td>-->
+              <!--<td>-->
+                <!--<div>-->
+                  <!--<div id="currency" style="display: none; float: left;">-->
+                    <!--<div id="Div1" style="float: left; padding-top: 5px">-->
+                      <!--Валюта&nbsp;-->
+                    <!--</div>-->
+                    <!--<div id="CurrencyComboBoxLabel" style="float: left;">-->
+                    <!--</div>-->
+                  <!--</div>-->
+                  <!--<div style="float: right; padding-top: 2px">-->
+                    <!--<a href="javascript:OpenResultsFrame()">-->
+                      <!--<img height="18" alt="ИСКАТЬ" src="../Images/button_search.gif" width="58" border="0"></a>-->
+                  <!--</div>-->
+                <!--</div>-->
+              <!--</td>-->
+            <!--</tr>-->
+            <!--<tr>-->
+              <!--<td colspan="9" align="right">-->
+                <!--<div id="WaitingControl">-->
+                  <!--<img src="../Images/snake.gif" alt=""/></div>-->
+              <!--</td>-->
+            <!--</tr>-->
+          <!--</table>-->
+        <!--</td>-->
+        <!--<td width="15">-->
+          <!--<img src="../Images/e.gif" width="15" height="1" border="0"></td>-->
+      <!--</tr>-->
+      <!--<tr bgcolor="#f4f4f4">-->
+        <!--<td height="14">-->
+          <!--</td>-->
+        <!--<td>-->
+          <!--<img src="../Images/e.gif" width="1" height="1" border="0"></td>-->
+        <!--<td>-->
+          <!--</td>-->
+      <!--</tr>-->
+    <!--</table>-->
+  <!--</form>-->
+  <iframe id="frameResult" frameborder="0" scrolling="auto" allowtransparency="true" height="500" width="100%" src="/Html/Results2.htm"></iframe>
+</div>
+
+<div class="clear"></div>

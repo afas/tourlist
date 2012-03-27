@@ -1,0 +1,108 @@
+/*Р—Р°РіРѕР»РѕРІРѕРє СЃРїРёСЃРєР°*/
+.brn-pagetitle {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #2189C6;
+	text-decoration: none;
+}
+/*РЎС‚СЂРѕРєР° РЅР°РІРёРіР°С†РёРё*/
+.brn-navbar {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #2189C6;
+	text-decoration: none;
+}
+.brn-navbar a {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #2189C6;
+	text-decoration: underline;
+}
+/*РРЅРґРёРєР°С‚РѕСЂ "РРґРµС‚ Р·Р°РіСЂСѓР·РєР°..."*/
+.brn-waitbox {
+	position: absolute;
+	top: 5;
+	right: 0;
+	z-index: 1000;
+}
+/*РћР±С‰РёР№ РєРѕРЅС‚РµР№РЅРµСЂ, СЃРѕРґРµСЂР¶Р°С€РёР№ РїРµСЂРµС‡РёСЃР»РµРЅРЅС‹Рµ РЅРёР¶Рµ РєРѕРЅС‚РµР№РЅРµСЂС‹*/
+.brn-contentbox {
+	width: 900px;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-bottom: 20px;
+}
+.brn-contentbox a {
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #2189C6;
+	text-decoration: none;
+}
+/*РљРѕРЅС‚РµР№РЅРµСЂ РґР»СЏ СЃРїРёСЃРєР° СЃС‚СЂР°РЅ*/
+.brn-countriesbox {
+	width: 900px;
+	font-size: 1.2em;
+	line-height: 1.8em;
+}
+.brn-countriesbox a {
+}
+/*РљРѕРЅС‚РµР№РЅРµСЂ РґР»СЏ СЃРїРёСЃРєР° РіРѕСЂРѕРґРѕРІ*/
+.brn-citiesbox {
+	width: 900px;
+	font-size: 1.2em;
+	line-height: 1.8em;
+}
+.brn-citiesbox a {
+}
+/*РљРѕРЅС‚РµР№РЅРµСЂ РґР»СЏ СЃРїРёСЃРєР° РѕС‚РµР»РµР№*/
+.brn-hotelsbox {
+	width: 900px;
+	font-size: 1.2em;
+	line-height: 1.8em;
+}
+.brn-hotelsbox a {
+}
+/*РљРѕРЅС‚РµР№РЅРµСЂ РґР»СЏ РёРЅС„РѕСЂРјР°С†РёРё РѕР± РѕС‚РµР»Рµ*/
+.brn-hotelinfobox {
+	width: 900px;
+}
+.brn-hotelinfobox a {
+}
+/*РЎС‚РёР»СЊ РєРѕР»РѕРЅРєРё РІ СЃРїРёСЃРєРµ (СЃС‚СЂР°РЅ,РіРѕСЂРѕРґРѕРІ,РѕС‚РµР»РµР№)*/
+/*Р’РѕР·РјРѕР¶РЅРѕ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёРµ РІР»РѕР¶РµРЅРЅРѕСЃС‚Рё РїСЂРё РЅРµРѕР±С…РѕРґРёРјРѕСЃС‚Рё, РЅР°РїСЂРёРјРµСЂ .brn-countriesbox .brn-listcol -- СЃС‚РёР»СЊ РґР»СЏ РєРѕР»РѕРЅРєРё РІ СЃРїРёСЃРєРµ СЃС‚СЂР°РЅ*/
+.brn-listcol {
+	width: 125px;
+}
+
+/* Р Р°Р·РјРµСЂС‹ РґР»СЏ РІС‹РїР°РґР°СЋС‰РµРіРѕ СЃРїРёСЃРєР° СЃС‚СЂР°РЅ */
+#comboCountry_base, #comboCountry_base .e-combobox
+/* РћСЃРЅРѕРІРЅРѕРµ РѕРєРЅРѕ */
+{width: 190px; height: 20px}
+#comboCountry_base .e-combobox .e-combobox-input
+/* РџРѕР»Рµ РІРІРѕРґР° С‚РµРєСЃС‚Р°, РјРµРЅСЊС€Рµ РѕСЃРЅРѕРІРЅРѕРіРѕ РѕРєРЅР° РЅР° С€РёСЂРёРЅСѓ РєР°СЂС‚РёРЅРєРё СЃРѕ СЃС‚СЂРµР»РѕС‡РєРѕР№ */
+{width: 168px; height: 20px}
+comboCountry_list
+/* Р’С‹СЃРѕС‚Р° РІС‹РїР°РґР°СЋС‰РµРіРѕ СЃРїРёСЃРєР° */
+{height: 180px}
+
+/* Р Р°Р·РјРµСЂС‹ РґР»СЏ РІС‹РїР°РґР°СЋС‰РµРіРѕ СЃРїРёСЃРєР° РіРѕСЂРѕРґРѕРІ */
+#comboCity_base, #comboCity_base .e-combobox
+/* РћСЃРЅРѕРІРЅРѕРµ РѕРєРЅРѕ */
+{width: 190px; height: 20px}
+#comboCity_base .e-combobox .e-combobox-input
+/* РџРѕР»Рµ РІРІРѕРґР° С‚РµРєСЃС‚Р°, РјРµРЅСЊС€Рµ РѕСЃРЅРѕРІРЅРѕРіРѕ РѕРєРЅР° РЅР° С€РёСЂРёРЅСѓ РєР°СЂС‚РёРЅРєРё СЃРѕ СЃС‚СЂРµР»РѕС‡РєРѕР№ */
+{width: 168px; height: 20px}
+comboCity_list
+/* Р’С‹СЃРѕС‚Р° РІС‹РїР°РґР°СЋС‰РµРіРѕ СЃРїРёСЃРєР° */
+{height: 180px}
+
+/* Р Р°Р·РјРµСЂС‹ РґР»СЏ РІС‹РїР°РґР°СЋС‰РµРіРѕ СЃРїРёСЃРєР° Р·РІРµР·РґРЅРѕСЃС‚РµР№ */
+#comboStars_base, #comboStars_base .e-combobox
+/* РћСЃРЅРѕРІРЅРѕРµ РѕРєРЅРѕ */
+{width: 190px; height: 20px}
+#comboStars_base .e-combobox .e-combobox-input
+/* РџРѕР»Рµ РІРІРѕРґР° С‚РµРєСЃС‚Р°, РјРµРЅСЊС€Рµ РѕСЃРЅРѕРІРЅРѕРіРѕ РѕРєРЅР° РЅР° С€РёСЂРёРЅСѓ РєР°СЂС‚РёРЅРєРё СЃРѕ СЃС‚СЂРµР»РѕС‡РєРѕР№ */
+{width: 168px; height: 20px}
+comboCity_list
+/* Р’С‹СЃРѕС‚Р° РІС‹РїР°РґР°СЋС‰РµРіРѕ СЃРїРёСЃРєР° */
+{height: 180px}

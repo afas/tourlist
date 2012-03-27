@@ -1,0 +1,25 @@
+<div class="chrono_link_wrap">
+  <div class="chrono_link_content">
+    <p id="notice"><%= notice %></p>
+
+    <%= render 'info' %>
+
+    <form action="https://payments.chronopay.com/" method="POST">
+      <%= hidden_field_tag 'product_id', Tourlist::Application.product_id %>
+      <%= hidden_field_tag 'product_price', @chronopay_link.product_price %>
+      <%= hidden_field_tag 'cs1', @chronopay_link.pay_product_id %>
+      <%= hidden_field_tag 'sign', @chronopay_link.sign %>
+      <%= hidden_field_tag 'cb_url', chronopay_link_callback_url(callback_chronopay_links_path) %>
+      <%= hidden_field_tag 'success_url', chronopay_link_callback_url(success_chronopay_link_path(@chronopay_link)) %>
+      <%= hidden_field_tag 'decline_url', chronopay_link_callback_url(failed_chronopay_link_path(@chronopay_link)) %>
+      <input type="submit" value="Оплатить через ChronoPay"/>
+    </form>
+
+    <% if user_signed_in? %>
+        <br/>
+        <%= link_to 'Редактировать', edit_chronopay_link_path(@chronopay_link) %> |
+        <%= link_to 'Список ссылок хронопея', chronopay_links_path %>
+    <% end %>
+
+  </div>
+</div>

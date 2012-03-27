@@ -1,0 +1,30 @@
+<div class="auto-complete-list">
+  <h2>Список стран и городов используемых для автозаполнения формы заказа авиа-билетов</h2>
+
+  <div class="b-form">
+    <% @auto_countries.each do |country| %>
+        <dl class="begin" id="auto_country_<%= country.id %>">
+          <dt>
+            <%= country.name %>
+            <%= link_to 'X', delete_auto_country_path(country.id),
+                        :confirm => "Вы действительно хотите удалить страну \"#{country.name}\"?",
+                        :remote => true %>
+          </dt>
+          <dd>
+            <% if country.auto_complete_cities.empty? %>
+                --
+            <% else %>
+                <% country.auto_complete_cities.each do |city| %>
+                    <div id="auto_city_<%= city.id %>">
+                      <%= city.name %>
+                      <%= link_to 'X', delete_auto_city_path(city.id),
+                                  :confirm => "Вы действительно хотите удалить город \"#{city.name}\"?",
+                                  :remote => true %>
+                    </div>
+                <% end %>
+            <% end %>
+          </dd>
+        </dl>
+    <% end %>
+  </div>
+</div>

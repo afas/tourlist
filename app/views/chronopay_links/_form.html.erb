@@ -1,0 +1,19 @@
+<%= form_for(@chronopay_link, :builder => StarsFormBuilder) do |f| %>
+  <%= render 'shared/error_messages', :target => @chronopay_link %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :pay_product_id %><br />
+    <%= f.text_field :pay_product_id %>
+  </div>
+  <div class="field">
+    <%= f.label :product_price %><br />
+    <%= f.text_field :product_price %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Сохранить' %>
+  </div>
+<% end %>

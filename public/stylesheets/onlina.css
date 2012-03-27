@@ -1,0 +1,180 @@
+.i_agree {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.i_agree p {
+    font-size: 13pt;
+    text-indent: 21pt;
+}
+
+.i_agree input {
+    width: auto !important;
+}
+
+.i_agree #flag {
+    text-align: center;
+}
+
+.contract {
+    width: 100%;
+    height: 255px;
+    overflow-y: auto;
+    font-size: 14px;
+    text-align: left;
+    /*margin: 0 auto;*/
+    margin-bottom: 5px;
+}
+
+#form-table input {
+    width: 100%;
+}
+
+.separator hr {
+    width: 80%;
+    height: 2;
+    background: #f6821b;
+    margin: 3px 0;
+}
+
+#accordion h3 {
+    font-size: 20px;
+    margin: 5px;
+}
+
+.active {
+    color: #097da8;
+}
+
+.passive {
+    color: #999999;
+}
+
+.passive a {
+    color: #999999 !important;
+}
+
+.passive a:hover {
+    color: #999999 !important;
+}
+
+#tabs #menu {
+    margin-bottom: 10px;
+}
+
+#tabs #menu ul, #tabs #menu li {
+    display: inline;
+    font-size: 18px;
+    color: #aaaaaa;
+}
+
+.b-form dl {
+    position: relative;
+}
+
+.b-form dl.begin {
+    margin-top: 5px;
+}
+
+.b-form ul.end {
+    margin-bottom: 5px;
+}
+
+.b-form dt  {
+    position: absolute;
+    top: 5px;
+}
+
+.b-form dd  {
+    position: relative;
+    left: 120px;
+}
+
+.b-form .field_with_errors {
+    display: inline;
+}
+
+.b-form .field_with_errors input, #order-avia-ticket .field_with_errors textarea {
+    border: 2px solid red;
+}
+
+#avia-ticket-submit, #avia-ticket-wait {
+    margin-top: 8px;
+    text-align: center;
+}
+
+#avia-ticket-message {
+    margin-top: 8px;
+    text-align: center;
+    color: #f6821b;
+}
+
+#type-select input {
+    width: 10px;
+}
+
+.auto-complete-list {
+    margin: 0;
+    padding: 14px 16px;
+}
+
+.auto-complete-list h2 {
+    margin-bottom: 10px;
+}
+
+.auto-complete-list dl {
+    left: 240px;
+}
+
+.ui-tabs-hide {
+    display: none;
+}
+
+.ui-tabs-selected a {
+    color: #999999 !important;
+}
+
+#ui-datepicker-div {
+    background-color: white;
+    font-size: 16px;
+    padding: 10px;
+    border: 1px solid #445577;
+}
+
+#ui-datepicker-div a {
+    margin: 10px 6px;
+    padding: 2px 4px;
+}
+
+#ui-datepicker-div a.ui-state-active {
+    background-color: #fa8072;
+}
+
+#ui-datepicker-div a.ui-state-hover {
+    background-color: orange;
+}
+
+#ui-datepicker-div td {
+    font-size: 16px;
+}
+
+.ui-autocomplete {
+    width: 245px !important;
+    background-color: #eeeeee;
+    font-size: 14px;
+    text-align: left;
+    padding: 3px;
+    border: 1px solid #445577;
+}
+
+#ui-active-menuitem {
+    background-color: #eee8aa;
+}
+
+.chrono_link_wrap {
+    width: 100%;
+}
+
+.chrono_link_wrap div.chrono_link_content {
+    width: 40%;
+    margin: 0 auto;
+}

@@ -1,0 +1,7 @@
+$('#WaitingControl').hide();
+$('.i_agree').html("<%= escape_javascript(render(:partial => 'i_agree')) %>");
+$('.tourists').html("<%= escape_javascript(render(:partial => 'tourists')) %>");
+$('#sign').val();
+<% if @valid %>
+passport_complete("<%= @contract.tour_number %>", "<%= @price %>", "<%= @sign %>");
+<% end %>

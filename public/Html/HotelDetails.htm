@@ -1,0 +1,545 @@
+<!-- 1.2.0 -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<title>Детальная информация об отеле</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta http-equiv="content-language" content="ru">
+	<meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema">
+	<!-- Системная библиотека -->
+	<script src="../js/System/System.js" type="text/javascript"></script>
+	<!-- Библиотека для работы с датами -->
+	<script src="../js/System/DateTime.js" type="text/javascript"></script>
+	<!-- Внешняя системная библиотека стороннего разработчика -->
+	<script src="../js/ajs/AJS.js" type="text/javascript"></script>
+	<script src="../js/ajs/AJS_fx.js" type="text/javascript"></script>
+	<!-- Оригинальный стиль BRONNI.RU -->
+	<link href="../Styles/Design.css" rel="stylesheet" />
+	<!-- Библиотека доступа к данным с сайта BRONN.RU -->
+	<script src="../js/System/Ajax.js" type="text/javascript"></script>
+	<!-- Библиотека доступа к данным в формате JSON-->
+	<script src="../js/Json/json.js" type="text/javascript"></script>
+	<!-- Прокси для авторизации -->
+	<script src="../js/Proxy/SecurityProxy.js" type="text/javascript"></script>
+	<!-- Прокси для получения данных по отелю -->
+	<script src="../js/Proxy/HotelProxy.js" type="text/javascript"></script>
+	<!-- Обработчик шаблонов -->
+	<!-- Прокси для получения данных о справочниках -->
+	<script src="../js/Proxy/DictionariesProxy.js" type="text/javascript"></script>
+	<!-- Библиотеки элементов управления -->
+	<!-- ComboBox -->
+	<script src="../js/Controls/ComboBox.js"></script>
+	<!-- Общий стиль для всех выпадающих списков -->
+	<link href="../Styles/Controls/ComboBox.css" rel="stylesheet"></link>
+	<!-- ListBox -->
+	<script src="../js/Controls/ListBox.js"></script>
+	<!-- Общий стиль для всех выпадающих списков -->
+	<link href="../Styles/Controls/ListBox.css" rel="stylesheet"></link>
+	<!-- Calendar -->
+	<script src="../js/Controls/Calendar.js"></script>
+	<!-- Общий стиль для всех календарей -->
+	<link href="../Styles/Controls/calendar/skins/theme.css" rel="stylesheet"></link>
+	<!-- Текущие визуальные настройки элементов управления -->
+	<link id="styles" href="../Styles/SearchForm_std.css" type="text/css" rel="stylesheet">
+	<script src="../js/System/TemplateEngine.js" type="text/javascript"></script>
+	<!-- Начальные установки модуля поиска -->
+	<script src="../js/Setup.js" type="text/javascript"></script>
+	<!-- Данные -->
+	<script src="../js/DataSource/HotelsDataSource.js" type="text/javascript"></script>
+	<script src="../js/DataSource/DictionariesDataSource.js" type="text/javascript"></script>
+	<!-- События элементов управления -->
+	<script src="../js/Events.js" type="text/javascript"></script>
+	<!-- Библиотека jQuery -->
+	<script src="../js/System/jquery.js" type="text/javascript"></script>
+	<!-- Библиотеки для обеспечения показа нового окна -->
+	<script type="text/javascript">
+		var GB_ROOT_DIR = "../js/ajs/GreyBox/greybox/";
+	</script>
+	<script type="text/javascript" src="../js/ajs/GreyBox/greybox/gb_scripts.js"></script>
+	<link href="../js/ajs/GreyBox/greybox/gb_styles.css" rel="stylesheet" type="text/css" />
+	<link id="Link1" href="../Styles/HotelCatalog.css" type="text/css" rel="stylesheet"></link>
+	<script src="../js/PageScript/HotelDetails.js" type="text/javascript"></script>
+</head>
+<body onload="onloadwindow()">
+<div id="contentBody">
+	<div style="margin-top: 10px;">
+		<div id="WaitingControl" style="float: right; display: none;"><img src="../Images/snake.gif" alt="" width="16" height="16" />Идет загрузка...</div>
+		<div id="NavigationBar" style="height: 20px;"></div>
+	</div>
+	<div id="Div7" style="display: inline;">
+		<span id="requestResultMessage" style="display: none;"></span>
+	</div>
+	<table cellspacing="0" cellpadding="0" width="100%" border="0">
+		<tr valign="bottom">
+			<td height="14"><img src="../Images/bg20.gif" width="15" height="6" border="0"></td>
+			<td style="background: url(../Images/bg21.gif) repeat-x left bottom">
+				<span class="h1"><img src="../Images/ic1.gif" width="7" height="7" border="0">&nbsp;&nbsp;ОПИСАНИЕ&nbsp;ОТЕЛЯ</span>
+			</td>
+			<td><img src="../Images/bg22.gif" width="15" height="6" border="0"></td>
+		</tr>
+		<tr valign="top">
+			<td style="background: url(../Images/bg18.gif) repeat-y left top" width="15">
+				<img height="1" src="../Images/e.gif" width="15" border="0">
+			</td>
+			<td width="100%">
+				<!-- Содержание центрального окна -->
+				<table cellspacing="3" cellpadding="0" width="100%" border="0">
+					<tr>
+						<td colspan="2" style="text-align:center; font-size:20; font-weight:bold; width:100%; color:#836669;">
+							<span name="HotelDescription.hotel.russianName$token"></span>
+						</td>
+					</tr>
+					<tr>
+						<!--Верхнее меню -->
+						<!--<td colspan="2">-->
+							<!--<table cellspacing="0" cellpadding="0" width="100%" border="0">-->
+								<!--<tr valign="bottom">-->
+									<!--<td height="14"><img src="../Images/bg20.gif" width="15" height="6" border="0"></td>-->
+									<!--<td style="background: url(../Images/bg21.gif) repeat-x left bottom"></td>-->
+									<!--<td><img src="../Images/bg22.gif" width="15" height="6" border="0"></td>-->
+								<!--</tr>-->
+								<!--<tr valign="top">-->
+									<!--<td style="background: url(../Images/bg18.gif) repeat-y left top" width="15">-->
+										<!--<img height="1" src="../Images/e.gif" width="15" border="0">-->
+									<!--</td>-->
+									<!--<td width="100%">-->
+										<!--&lt;!&ndash;Менюшка &ndash;&gt;-->
+										<!--<table style="text-align:center; font-size:13; font-weight:bold; width:100%; color:#F6821B;">-->
+											<!--<tr>-->
+												<!--<td width="33%">-->
+													<!--<a href="#divHotelServicesBlock">ОПИСАНИЕ УСЛУГ</a>-->
+												<!--</td>-->
+												<!--<td width="33%">-->
+													<!--<a href="#divHotelComments">ОТЗЫВЫ ТУРИСТОВ</a> 								  -->
+												<!--</td>-->
+												<!--<td  width="33%">-->
+													<!--<a href="#divFindCostsByHotel">ПОИСК ЦЕН ПО ОТЕЛЮ</a>-->
+												<!--</td>-->
+											<!--</tr>-->
+										<!--</table>-->
+										<!--&lt;!&ndash;Менюшка end&ndash;&gt;-->
+									<!--</td>-->
+									<!--<td style="background: url(../Images/bg19.gif) repeat-y left top" width="15">-->
+										<!--<img height="1" src="../Images/e.gif" width="15" border="0">-->
+									<!--</td>-->
+								<!--</tr>-->
+								<!--<tr>-->
+									<!--<td height="14"><img height="14" src="../Images/bg15.gif" width="15" border="0"></td>-->
+									<!--<td style="background: url(../Images/bg16.gif) repeat-x left top">-->
+										<!--<img height="1" src="../Images/e.gif" width="1" border="0">-->
+									<!--</td>-->
+									<!--<td><img height="14" src="../Images/bg17.gif" width="15" border="0"></td>-->
+								<!--</tr>-->
+							<!--</table>-->
+						<!--</td>-->
+						<!--//Верхнее меню -->
+					</tr>
+					<tr>
+						<td width="100%">
+							<table cellspacing="0" cellpadding="0" width="100%" border="0">
+								<tr>
+									<td valign="top" rowspan="2">
+										<!--Скролинг фоток -->
+										<div id="imageGalleryControl_Panel" style="height:565px;width:141px;overflow-y:hidden;overflow-x:hidden;text-align:left;">
+											<table width="100%">
+												<tr name="HotelDescription.images$row">
+													<td>
+														<span name="getHotelPrevImage('MainHotelImage',HotelDescription.images,120,90,735,550)$token" ></span>
+													</td>
+												</tr>
+											</table>
+										</div>
+										<!--//Скролинг фоток -->
+									</td>
+									<td align="center" valign="center" rowspan="3" style="padding:2">
+										<!-- Область для вывода первой фотографии -->
+										<div id="MainHotelImageDiv">
+											<span id="MainHotelImage" name="getHotelMainImage( HotelDescription.images, 735, 551)$token"></span>
+											<br><span id="WaitingControlImage"><img src="../Images/snake.gif" alt="" width="16" height="16" />Идет загрузка ...</span>
+											<b style="height:17px">&nbsp;</b>
+											<!--b>Галерея фотографий(<span name="HotelDescription.imageCount$token"></span>)</b> <a href="javascript:void(0)" onclick="return showGallery();">>></a-->
+										</div>
+										<div id="NoImageMainHotel" style="display:none">
+											<img src="../Images/no_image.gif" width="263" height="228" border="0">
+										</div>
+										<!-- //Область для вывода первой фотографии -->
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+
+                    <tr>
+                        <td colspan="2" id="Td1">
+                            <!-- поиск цен по отелю -->
+                            <div id="divFindCostsByHotel"></div>
+                            <form name="search" id="search" method="post">
+                                <table cellspacing="0" cellpadding="0" border="0">
+                                    <tr valign="bottom">
+                                        <td height="14"><img src="../Images/bg20.gif" width="15" height="6" border="0"></td>
+                                        <td style="background: url(../Images/bg21.gif) repeat-x left bottom">
+                                            <span class="h1"><img src="../Images/ic1.gif" width="7" height="7" border="0">&nbsp;&nbsp;ПОИСК&nbsp;ЦЕН&nbsp;ПО&nbsp;ОТЕЛЮ</span>
+                                        </td>
+                                        <td><img src="../Images/bg22.gif" width="15" height="6" border="0"></td>
+                                    </tr>
+                                    <tr valign="top">
+                                        <td style="background: url(../Images/bg18.gif) repeat-y left top" width="15">
+                                            <img height="1" src="../Images/e.gif" width="15" border="0">
+                                        </td>
+                                        <td>
+                                            <!-- на две части -->
+                                            <table>
+                                                <tr>
+                                                    <td>
+                                                        <div id="DepartureCityComboBoxLabel" style="padding: 5px;">
+                                                            &nbsp;Город вылета:&nbsp;
+                                                        </div>
+                                                        <div id="Div3" style="padding: 5px;">
+                                                            Взрослые:<input name="AdultTextBox" id="AdultTextBox" class="adult-text" />&nbsp;&nbsp;Дети:<input name="ChildTextBox" id="ChildTextBox" class="child-text" />
+                                                        </div>
+                                                        <div id="Div5" style="padding: 5px;">
+                                                            Заезд c:&nbsp;<input name="DateFromTextBox" id="DateFromTextBox" class="date-from-text" onchange="ChangeFirstDate()" /><img id="DateFromImage" src="../Images/calendar.gif" style="cursor: pointer" alt="Открыть календарь" />
+                                                            по&nbsp;<input name="DateToTextBox" id="DateToTextBox" class="date-to-text" /><img id="DateToImage" src="../Images/calendar.gif" style="cursor: pointer" alt="Открыть календарь" />
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div id="Div2" style="padding: 5px;">
+                                                            Продолжительность (ночей) от&nbsp;<input name="NightsFromTextBox" id="Text1" class="nights-from-text" />
+                                                            до&nbsp;<input name="NightsToTextBox" id="Text2" class="nights-to-text" />
+                                                        </div>
+                                                        <div id="Div4" style="padding: 5px;">
+                                                            Цена&nbsp;от&nbsp;<input name="PriceFromTextBox" id="PriceFromTextBox" class="price-from-text" />&nbsp;до&nbsp;<input name="PriceToTextBox" id="PriceToTextBox" class="price-to-text" />&nbsp;&nbsp;
+                                                            <span id="CurrencyComboBoxLabel" style="display: inline-block; vertical-align: bottom;"></span>
+                                                        </div>
+                                                        <div id="Div6" style="padding: 5px; text-align: right; vertical-align: bottom;">
+                                                            <a href="javascript:void(0)" onclick="OpenResults()">
+                                                            <img height="18" alt="ИСКАТЬ" src="../Images/button_search.gif" width="58" border="0"></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <!-- //на две части -->
+                                        </td>
+                                        <td style="background: url(../Images/bg19.gif) repeat-y left top" width="15">
+                                            <img height="1" src="../Images/e.gif" width="15" border="0">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td height="14">
+                                            <img height="14" src="../Images/bg15.gif" width="15" border="0"></td>
+                                        <td style="background: url(../Images/bg16.gif) repeat-x left top">
+                                            <img height="1" src="../Images/e.gif" width="1" border="0"></td>
+                                        <td>
+                                            <img height="14" src="../Images/bg17.gif" width="15" border="0"></td>
+                                    </tr>
+                                </table>
+                            </form>
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td valign="top" colspan="2" >
+                            <!-- Область для вывода общей информации об отеле -->
+                            <table cellspacing="0" cellpadding="0" width="100%" border="0">
+                                <tr valign="bottom">
+                                    <td height="14"><img src="../Images/bg20.gif" width="15" height="6" border="0"></td>
+                                    <td style="background: url(../Images/bg21.gif) repeat-x left bottom">
+                                        <span class="h1"><img src="../Images/ic1.gif" width="7" height="7" border="0">&nbsp;&nbsp;ОБЩАЯ&nbsp;ИНФОРМАЦИЯ</span>
+                                    </td>
+                                    <td><img src="../Images/bg22.gif" width="15" height="6" border="0"></td>
+                                </tr>
+                                <tr valign="top">
+                                    <td style="background: url(../Images/bg18.gif) repeat-y left top" width="15">
+                                        <img height="1" src="../Images/e.gif" width="15" border="0">
+                                    </td>
+                                    <td width="100%">
+
+                                        <table id="HotelInfo" style="table-layout:fixed;" width="290">
+                                            <col width="80"><col width="210">
+                                            <tr id="hotelCountryRow" style="display:none">
+                                                <td>
+                                                    <strong>Страна:</strong></td>
+                                                <td name="HotelDescription.hotel.country.russianName$token">
+                                                </td>
+                                            </tr>
+                                            <tr id="hotelCityRow" style="display:none">
+                                                <td>
+                                                    <strong>Город:</strong></td>
+                                                <td name="HotelDescription.hotel.city.russianName$token">
+                                                </td>
+                                            </tr>
+                                            <tr id="hotelStarRow" style="display:none">
+                                                <td>
+                                                    <strong>Звездность:</strong></td>
+                                                <td name="HotelDescription.hotel.star.russianName$token">
+                                                </td>
+                                            </tr>
+                                            <tr id="hotelPostalAddressRow" style="display:none">
+                                                <td>
+                                                    <strong>Адрес:</strong></td>
+                                                <td name="HotelDescription.hotel.postalAddress$token">
+                                                </td>
+                                            </tr>
+                                            <tr id="hotelPhoneNumberRow" style="display:none">
+                                                <td>
+                                                    <strong>Телефон:</strong></td>
+                                                <td name="HotelDescription.hotel.phoneNumber$token">
+                                                </td>
+                                            </tr>
+                                            <tr id="hotelFaxNumberRow" style="display:none">
+                                                <td>
+                                                    <strong>Факс:</strong></td>
+                                                <td name="HotelDescription.hotel.faxNumber$token">
+                                                </td>
+                                            </tr>
+                                            <tr id="hotelEmailAddressRow" style="display:none">
+                                                <td>
+                                                    <strong>E-mail:</strong></td>
+                                                <td name="getHotelDescriptionEmail(HotelDescription.hotel.emailAddress)$token">
+                                                </td>
+                                            </tr>
+                                            <tr id="hotelUrlRow" style="display:none">
+                                                <td>
+                                                    <strong>Сайт:</strong></td>
+                                                <td name="getHotelDescriptionSite(HotelDescription.hotel.url)$token">
+                                                </td>
+                                            </tr>
+                                            <tr id="hotelInformationSourceRow" style="display:none">
+                                                <td>
+                                                    <strong>Источник информации:</strong></td>
+                                                <td name="HotelDescription.hotel.informationSource$token">
+                                                </td>
+                                            </tr>
+                                            <tr id="hotelCopyrightRow" style="display:none">
+                                                <td>
+                                                    <strong>Авторское право:</strong></td>
+                                                <td name="HotelDescription.hotel.copyright$token">
+                                                </td>
+                                            </tr>
+                                            <tr id="rowHotelPanoramasLink" style="display: none">
+                                                <td>
+                                                </td>
+                                                <td>
+                                                    <a target="_blank" id="lnkHotelPanoramas">
+                                                        <img src="../Images/visualhotels_px.gif" border="0" />
+                                                        <b>Виртуальный тур по отелю</b> </a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <div style="margin-top: 10px;">
+                                            <span name="GetSatellitePicturePageReference(HotelDescription)$token"></span>
+                                        </div>
+                                    </td>
+                                    <td style="background: url(../Images/bg19.gif) repeat-y left top" width="15">
+                                        <img height="1" src="../Images/e.gif" width="15" border="0">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height="14"><img height="14" src="../Images/bg15.gif" width="15" border="0"></td>
+                                    <td style="background: url(../Images/bg16.gif) repeat-x left top">
+                                        <img height="1" src="../Images/e.gif" width="1" border="0">
+                                    </td>
+                                    <td><img height="14" src="../Images/bg17.gif" width="15" border="0"></td>
+                                </tr>
+                            </table>
+                            <!-- //Область для вывода общей информации об отеле -->
+
+                            <!-- Область для вывода Инфо на других сайтах -->
+                            <table id="externalHotelSourcesTable" style="display: none;" cellspacing="0" cellpadding="0" width="100%" height="100%" border="0">
+                                <tr valign="bottom">
+                                    <td height="14"><img src="../Images/bg20.gif" width="15" height="6" border="0"></td>
+                                    <td style="background: url(../Images/bg21.gif) repeat-x left bottom">
+                                        <span class="h1"><img src="../Images/ic1.gif" width="7" height="7" border="0">&nbsp;НА&nbsp;ДРУГИХ&nbsp;САЙТАХ</span>
+                                    </td>
+                                    <td style="width: 16px"><img src="../Images/bg22.gif" width="15" height="6" border="0"></td>
+                                </tr>
+                                <tr valign="top">
+                                    <td style="background: url(../Images/bg18.gif) repeat-y left top" width="15">
+                                        <img height="1" src="../Images/e.gif" width="15" border="0">
+                                    </td>
+                                    <td width="100%" height="100%">
+                                        <br>
+                                        <div class="m_block1" style="overflow: hidden; width: 100%; height: auto" id="Div1">
+                                            <table width="100%">
+                                                <tr>
+                                                    <td>
+                                                        Дополнительную информацию Вы можете посмотреть здесь:
+                                                    </td>
+                                                </tr>
+                                                <tr name="HotelDescription.externalHotelSources$row">
+                                                    <td>
+                                                        <h2><span name="HotelDescription.externalHotelSources.webAddress$token"></span></h2>
+                                                        <span name="getReference(HotelDescription.externalHotelSources.url, 'Рейтинг и отзывы', '', '', '_blank')$token"></span>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </td>
+                                    <td style="background: url(../Images/bg19.gif) repeat-y left top; width: 16px;">
+                                        <img height="1" src="../Images/e.gif" width="15" border="0">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height="14"><img height="14" src="../Images/bg15.gif" width="15" border="0"></td>
+                                    <td style="background: url(../Images/bg16.gif) repeat-x left top"><img height="1" src="../Images/e.gif" width="1" border="0"></td>
+                                    <td style="width: 16px"><img height="14" src="../Images/bg17.gif" width="15" border="0"></td>
+                                </tr>
+                            </table>
+                            <!-- //Область для вывода Инфо на других сайтах -->
+                        </td>
+                    </tr>
+					<tr>
+						<td colspan="2" id="HotelDescriptionCell">
+							<!-- Подробное описание отеля -->
+							<div id="divHotelServicesBlock"></div>
+							<table cellspacing="0" cellpadding="0" width="100%" border="0">
+								<tr valign="bottom">
+									<td height="14">
+										<img src="../Images/bg20.gif" width="15" height="6" border="0"></td>
+									<td style="background: url(../Images/bg21.gif) repeat-x left bottom">
+										<span class="h1">
+											<img src="../Images/ic1.gif" width="7" height="7" border="0">
+											&nbsp;&nbsp;ОПИСАНИЕ&nbsp;УСЛУГ</span></td>
+									<td>
+										<img src="../Images/bg22.gif" width="15" height="6" border="0"></td>
+								</tr>
+								<tr valign="top">
+									<td style="background: url(../Images/bg18.gif) repeat-y left top" width="15">
+										<img height="1" src="../Images/e.gif" width="15" border="0">
+									</td>
+									<td width="100%">
+										<div class="m_block1">
+											<h2>Подробное описание отеля</h2>
+											<span name="HotelDescription.hotelDescription$token"></span>
+											<h2>Услуги отеля:</h2>
+											<div>
+												<span name="HotelDescription.hotelAttributes$row"><span name="getAttribute(HotelDescription.hotelAttributes)$token"></span>&nbsp; </span>
+											</div>
+											<br />
+											<img src="../Images/bg21.gif" width="400" height="5" />
+											<br />
+										</div>
+										<div class="m_block1">
+											<h2>Подробное описание номеров</h2>
+											<span name="HotelDescription.roomDescription$token"></span>
+											<h2>Услуги в номере:</h2>
+											<div>
+												<span name="HotelDescription.roomAttributes$row"><span name="getAttribute(HotelDescription.roomAttributes)$token"></span>&nbsp; </span>
+											</div>
+											<br />
+											<img src="../Images/bg21.gif" width="400" height="5" />
+											<br />
+										</div>
+										<div class="m_block1">
+											<h2>Спортивные развлечения</h2>
+											<span name="HotelDescription.sportDescription$token"></span>
+											<h2>Спорт:</h2>
+											<div>
+												<span name="HotelDescription.sportAttributes$row"><span name="getAttribute(HotelDescription.sportAttributes)$token"></span>&nbsp; </span>
+											</div>
+											<br />
+											<img src="../Images/bg21.gif" width="400" height="5" />
+											<br />
+										</div>
+										<div class="m_block1">
+											<h2>Подробное описание пляжа</h2>
+											<span name="HotelDescription.beachDescription$token"></span>
+											<h2>Пляж:</h2>
+											<div>
+												<span name="HotelDescription.beachAttributes$row"><span name="getAttribute(HotelDescription.beachAttributes)$token"></span>&nbsp; </span>
+											</div>
+											<br />
+											<img src="../Images/bg21.gif" width="400" height="5" />
+											<br />
+										</div>
+									</td>
+									<td style="background: url(../Images/bg19.gif) repeat-y left top" width="15">
+										<img height="1" src="../Images/e.gif" width="15" border="0">
+									</td>
+								</tr>
+								<tr>
+									<td height="14">
+										<img height="14" src="../Images/bg15.gif" width="15" border="0"></td>
+									<td style="background: url(../Images/bg16.gif) repeat-x left top">
+										<img height="1" src="../Images/e.gif" width="1" border="0"></td>
+									<td>
+										<img height="14" src="../Images/bg17.gif" width="15" border="0"></td>
+								</tr>
+							</table>
+							<!-- //Подробное описание отеля -->
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<!-- Область для вывода отзывов туристов -->
+							<div id="divHotelComments"></div>
+							<table cellspacing="0" cellpadding="0" width="100%" border="0" style="height: 100%">
+								<tr valign="bottom">
+									<td height="14"><img src="../Images/bg20.gif" width="15" height="6" border="0"></td>
+									<td style="background: url(../Images/bg21.gif) repeat-x left bottom">
+										<span class="h1"><img src="../Images/ic1.gif" width="7" height="7" border="0">&nbsp;&nbsp;ОТЗЫВЫ&nbsp;ТУРИСТОВ</span>
+									</td>
+									<td><img src="../Images/bg22.gif" width="15" height="6" border="0"></td>
+								</tr>
+								<tr valign="top">
+									<td style="background: url(../Images/bg18.gif) repeat-y left top" width="15">
+										<img height="1" src="../Images/e.gif" width="15" border="0">
+									</td>
+									<td width="100%" height="100%">
+										<br>
+										<div class="m_block1" style="overflow: hidden; width: 84%; height: auto" id="HotelCommentDiv">
+											<table width="100%">
+												<tr name="HotelDescription.comments$row">
+													<td>
+														<b><span name="(Date.fromUTCString(HotelDescription.comments.date)).toLocaleDateString()$token"></span></b>
+														<br>
+														<span name="HotelDescription.comments.authorName$token" style="font-style: italic"></span>
+														<br>
+														<span name="getHotelDescriptionComments(HotelDescription.comments.content)$token"></span>
+													</td>
+												</tr>
+											</table>
+										</div>
+										<a href="javascript:void(0);" onclick="AddComment();">Добавить отзыв</a>
+									</td>
+									<td style="background: url(../Images/bg19.gif) repeat-y left top" width="15">
+										<img height="1" src="../Images/e.gif" width="15" border="0">
+									</td>
+								</tr>
+								<tr>
+									<td style="height: 14px"><img height="14" src="../Images/bg15.gif" width="15" border="0"></td>
+									<td style="background: url(../Images/bg16.gif) repeat-x left top; height: 14px;">
+										<img height="1" src="../Images/e.gif" width="1" border="0">
+									</td>
+									<td style="height: 14px"><img height="14" src="../Images/bg17.gif" width="15" border="0"></td>
+								</tr>
+							</table>
+							<!-- //Область для вывода отзывов туристов -->
+						</td>
+					</tr>
+				</table>
+			</td>
+			<td style="background: url(../Images/bg19.gif) repeat-y left top" width="15">
+				<img height="1" src="../Images/e.gif" width="15" border="0">
+			</td>
+		</tr>
+		<tr>
+			<td height="14">
+				<img height="14" src="../Images/bg15.gif" width="15" border="0"></td>
+			<td style="background: url(../Images/bg16.gif) repeat-x left top">
+				<img height="1" src="../Images/e.gif" width="1" border="0">
+			</td>
+			<td>
+				<img height="14" src="../Images/bg17.gif" width="15" border="0"></td>
+		</tr>
+	</table>
+	<script>
+		function onloadwindow()
+		{
+			onloadHotelDetails();
+		}				
+    </script>
+</div>
+</body>
+</html>

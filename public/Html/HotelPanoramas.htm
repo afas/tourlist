@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Виртуальный тур по отелю</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta http-equiv="content-language" content="ru">
+	<meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema">
+    <!-- Системная библиотека -->
+	<script src="../js/System/System.js" type="text/javascript"></script>
+	<!-- Библиотека для работы с flash -->
+	<script src="../js/SWFObject/swfobject.js" type="text/javascript"></script>
+	<!-- Библиотека для работы с датами -->
+	<script src="../js/System/DateTime.js" type="text/javascript"></script>
+	<!-- Внешняя системная библиотека стороннего разработчика -->
+	<script src="../js/ajs/AJS.js" type="text/javascript"></script>
+	<script src="../js/ajs/AJS_fx.js" type="text/javascript"></script>	
+	<link href="../Styles/HotalPanoramas.css" rel="stylesheet" />
+	<!-- Библиотека доступа к данным с сайта BRONN.RU -->
+	<script src="../js/System/Ajax.js" type="text/javascript"></script>
+	<!-- Библиотека доступа к данным в формате JSON-->
+	<script src="../js/Json/json.js" type="text/javascript"></script>
+	<!-- Начальные установки модуля поиска -->
+	<script src="../js/Setup.js" type="text/javascript"></script>
+	<!-- Прокси для авторизации -->
+	<script src="../js/Proxy/SecurityProxy.js" type="text/javascript"></script>
+	<!-- Прокси для получения данных по отелю -->
+	<script src="../js/Proxy/HotelProxy.js" type="text/javascript"></script>
+	<script src="../js/DataSource/HotelsDataSource.js" type="text/javascript"></script>
+	<script src="../js/PageScript/HotelPanoramas.js" type="text/javascript"></script>
+	
+	<script language="javascript" type="text/javascript">
+	    function Init()
+	    {
+	        onLoadHotelPanoramas();
+	    }
+	</script>
+</head>
+<body onload="Init()">
+            <div id="divWaitingControl" style="float: right; display: none;">
+			<img src="../Images/snake.gif" alt="" width="16" height="16" />
+			Идет загрузка...</div>
+			
+    <table cellspacing="0" cellpadding="0" width="100%" border="0">
+        <tr valign="bottom">
+            <td height="14">
+                <img src="../Images/bg20.gif" width="15" height="6" border="0"></td>
+            <td style="background: url(../Images/bg21.gif) repeat-x left bottom">
+                <span class="h1" style="font-size: 10px; color: #F6821B; font-weight: bold; background: #FFFFFF;
+                    padding: 0px 7px 0px 7px;">
+                    <img src="../Images/ic1.gif" width="7" height="7" border="0" />
+                    ВИРТУАЛЬНЫЙ ТУР ПО ОТЕЛЮ </span>
+            </td>
+            <td>
+                <img src="../Images/bg22.gif" width="15" height="6" border="0" /></td>
+        </tr>
+        <tr valign="top">
+            <td style="background: url(../Images/bg18.gif) repeat-y left top" width="15">
+                <img height="1" src="../Images/e.gif" width="15" border="0" />
+            </td>
+            <td width="100%">
+                <!-- Содержание центрального окна -->
+                <table>
+                    <tr>
+                        <td style="vertical-align: top;text-align:center">
+                            <div id="divSwfContainer">
+                            </div>
+                            <br />
+                            <a id="lnkFullPanorama" style="display:none" target="_blank">Полный размер</a>
+                        </td>
+                        <td style="vertical-align: top">
+                            <div id="divListContainer">
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td style="background: url(../Images/bg19.gif) repeat-y left top" width="15">
+                <img height="1" src="../Images/e.gif" width="15" border="0" />
+            </td>
+        </tr>
+        <tr>
+            <td height="14">
+                <img height="14" src="../Images/bg15.gif" width="15" border="0" /></td>
+            <td style="background: url(../Images/bg16.gif) repeat-x left top">
+                <img height="1" src="../Images/e.gif" width="1" border="0" />
+            </td>
+            <td>
+                <img height="14" src="../Images/bg17.gif" width="15" border="0" /></td>
+        </tr>
+    </table>     
+</body>
+</html>

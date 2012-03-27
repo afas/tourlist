@@ -1,0 +1,10 @@
+Номер тура: <%= @pay_info[:cs1] %>
+
+Имя и фамилия держателя платежного инструмента (Банковской карты): <%= @pay_info[:name] %>
+Итоговая сумма платежа: <%= @pay_info[:total] %>
+Валюта платежа: <%= @pay_info[:currency] %>
+
+Идентификатор транзакции <%= @pay_info[:transaction_id] %>
+Тип транзакции(Purchase/Rebill/Preauth): <%= @pay_info[:transaction_type] %>
+Дата проведения платежа: <%= @pay_info[:date] %>
+Время проведения платежа:<%= @pay_info[:time] %>

@@ -1,0 +1,30 @@
+<div class="leftColumn">
+  <div class="inner">
+    <%= render :partial => 'layouts/top10_countries' %>
+  </div>
+</div>
+<div class="mainColumn">
+  <div class="inner">
+    <div class="content">
+      <h1>Карта сайта</h1>
+      <p></p>
+      <h2>Онлайна &mdash; продажа туров онлайн</h2>
+      <ul class="sitemap">
+        <% @static_pages.each do |static_page| %>
+            <li>
+              <%= link_to static_page.title, "/static_pages/#{static_page.alias}" %>
+            </li>
+        <% end %>
+      </ul>
+      <h2>Топ стран</h2>
+      <ul class="sitemap">
+        <% @top_countries.each do |top_country| %>
+            <li>
+              <%= link_to top_country.name, top_country %>
+            </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="clear"></div>

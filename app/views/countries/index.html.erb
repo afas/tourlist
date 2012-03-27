@@ -1,0 +1,29 @@
+<% content_for(:head) do %>
+    <%= javascript_include_tag '/javascripts/jquery-ui-1.8.11.custom.min.js' %>
+<% end %>
+
+
+
+<% if !user_signed_in? %>
+    <iframe id="frameResult" frameborder="0" scrolling="auto" allowtransparency="true" height="600" width="100%" src="/CountryStudy/Html/default.htm"></iframe>
+<% else %>
+<h1>Администрирование</h1>
+
+<ul id="countries">
+<% @countries.each do |country| %>
+  <li object_id="<%= country.id %>">
+    <p><%= link_to 'Просмотр', country %> |
+    <%= link_to 'Редактирование', edit_country_path(country) %> |
+    <%= link_to 'Удалить', country, :confirm => 'Вы уверены?', :method => :delete %>
+    </p><br/>
+    <b><%= country.name %></b>
+    <b><%= country.description %></b>
+    <span><%= country.bronni_id %></span>
+  </li>
+<% end %>
+</ul>
+
+<br />
+
+<%= link_to 'Добавить страну', new_country_path %>
+<% end %>

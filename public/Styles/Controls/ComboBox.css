@@ -1,0 +1,113 @@
+/* Ширина по умолчанию */
+.e-combobox, .e-combobox-input, .e-combo-list {
+    width: 200px;
+    z-index: 10000;
+}
+
+/* Высота по умолчанию */
+.e-combobox {
+    height: 20px;
+}
+
+.e-combobox-input {
+    height: 18px;
+}
+
+.e-combo-list {
+    height: 200px;
+}
+
+/* Основной стиль всего контрола */
+.e-combobox {
+/*display: inline-block;*/
+    border: 1px solid #000000;
+    background-color: #FFFFFF;
+    cursor: default;
+}
+
+.e-combobox table {
+    table-layout: fixed;
+}
+
+/* Стиль поля ввода*/
+.e-combobox-input {
+    border: 1px solid #FFF;
+    margin: 1;
+    padding: 0;
+    line-height: 17px;
+    vertical-align: middle; /*text-align:center;*/
+}
+
+.e-combobox-focus .e-combobox-input {
+    border: 1px dotted #aaa !important;
+}
+
+.e-combobox-button {
+    width: 13px;
+    height: 13px;
+    background-position: 0 -39px;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    margin: 3px;
+}
+
+.e-combobox-hov .e-combobox-button {
+    background-position: 0 -52px;
+}
+
+.e-combobox-pres .e-combobox-button {
+    background-position: 0 -65px;
+}
+
+.e-combobox-button {
+    background-image: url(dropdown.gif);
+}
+
+.e-combo-hilite {
+    cursor: hand;
+    cursor: pointer;
+    background: rgb(234, 242, 255);
+    border: 1px solid rgb(120, 172, 255);
+    color: black;
+    width: 100%;
+    white-space: nowrap;
+}
+
+.e-combo-item {
+    cursor: hand;
+    cursor: pointer;
+    background: white;
+    border: 1px solid white;
+    color: black;
+    width: 100%;
+    white-space: nowrap;
+}
+
+.e-combo-list table {
+    table-layout: fixed;
+}
+
+.e-combo-list-width {
+    width: 100%;
+}
+
+.e-combo-list {
+    border: 1px solid black;
+    background: white;
+    padding: 1px; /* enable this if you want scroll bars */
+    overflow: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    /*
+             scrollbar-base-color:		rgb(234,242,255);
+             scrollbar-highlight-color:	rgb(234,242,255);
+             scrollbar-3dlight-color:	rgb(120,172,255);
+             scrollbar-darkshadow-color:	rgb(120,172,255);
+             scrollbar-shadow-color:		rgb(234,242,255);
+             scrollbar-face-color:		rgb(234,242,255);
+             scrollbar-track-color:		white;
+             scrollbar-arrow-color:		black;
+             */
+
+}

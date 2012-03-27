@@ -1,0 +1,107 @@
+<script>
+
+    $(function() {
+        var $pdl = $('#avia_ticket_date_end').parents('dl');
+        $('#avia_ticket_visit_type_go_back').click(function() {
+            $pdl.show();
+        });
+        $('#avia_ticket_visit_type_just_there').click(function() {
+            $pdl.hide();
+        });
+
+        <% if @avia_ticket.visit_type != 'go_back' %>
+        $pdl.hide();
+        <% end %>
+
+        $('.datepicker').datepicker({
+            dateFormat: 'dd.mm.yy',
+            dayNamesMin: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
+            monthNames: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+            prevText: 'Назад',
+            nextText: 'Вперёд',
+            firstDay: 1
+        });
+
+        var split_str = ' | ';
+        var country_city_split_str = ' : ';
+
+        $('[field_data_type=country]').each(function() {
+            $(this).autocomplete({
+//                autoFocus: true,
+                source: function(req, add) {
+                    $.post('/auto_countries', req, function(data) {
+                        add(data.split(split_str));
+                    });
+                }
+            });
+        });
+        $('[field_data_type=city]').each(function() {
+            var city_field = $(this);
+            var from_to_type = city_field.attr('from_to_type');
+            var country_field = $('#avia_ticket_country_' + from_to_type);
+
+            city_field.autocomplete({
+//                autoFocus: true,
+                source: function(req, add) {
+                    req.country = country_field.val();
+
+                    $.post('/auto_cities', req, function(data) {
+                        var result = data.split(split_str);
+                        add($.map(result, function(country_city) {
+                            var item = country_city.split(country_city_split_str);
+                            return { label: item[1], value: item[1], country: item[0] };
+                        }));
+                    });
+                },
+                select: function(event, ui) {
+//                    alert(JSON.stringify(ui.item));
+                    country_field.val(ui.item.country);
+                }
+            });
+        });
+
+        $('#avia-ticket-submit input').click(function() {
+            $('#avia-ticket-wait').show();
+            $('#avia-ticket-submit').hide();
+        });
+    });
+</script>
+
+<p align='center'> ПОДБОР ОПТИМАЛЬНОГО МАРШРУТА И СТОИМОСТИ  </p>
+</br>
+<p> Пожалуйста заполните форму.</p>
+<p> Втечении 15 минут наши сотрудники свяжутся с вами.</p>
+</br>
+
+<div id="order-avia-ticket" class="b-form">
+  <%= form_for(@avia_ticket, :remote => true) do |f| %>
+
+      <%= solo_field(:avia_buyer, :full_name, 'Имя') %>
+      <%= solo_field(:avia_buyer, :email, 'E-mail') %>
+      <%= solo_field(:avia_buyer, :phone, 'Телефон') %>
+
+      <div align="center" id="type-select">
+        <%= f.radio_button :visit_type, :go_back, :checked => true %>
+        <%= f.label :visit_type, 'Туда и обратно', :value => :go_back %>
+        <%= f.radio_button :visit_type, :just_there %>
+        <%= f.label :visit_type, 'Только туда', :value => :just_there %>
+      </div>
+
+      <%= from_to_field(f, :country, 'Страна') %>
+      <%= from_to_field(f, :city, 'Город') %>
+      <%= from_to_field(f, :date, 'Дата', :class => :datepicker) %>
+
+      <div id="avia-ticket-wait" style="display:none;">
+        <img src="../Images/snake.gif">&nbsp;Идет отправка заказа...
+      </div>
+      <div id="avia-ticket-message" style="display:none;">
+      </div>
+      <div id="avia-ticket-submit">
+        <%= image_submit_tag '/Images/button_send.gif', :style => 'width: 85px;' %>
+      </div>
+<% end %>
+</div>
+
+
+
+

@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<title>Витрина туров</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta http-equiv="content-language" content="ru">
+	<meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema">
+	<!-- Системная библиотека -->
+	<script src="../js/System/System.js" type="text/javascript"></script>
+	<!-- Библиотека для работы с датами -->
+	<script src="../js/System/DateTime.js" type="text/javascript"></script>
+	<!-- Оригинальный стиль BRONNI.RU -->
+	<link href="../Styles/Design.css" rel="stylesheet"></link>
+	<!-- Библиотека доступа к данным с сайта BRONN.RU -->
+	<script src="../js/System/Ajax.js" type="text/javascript"></script>
+	<!-- Библиотека доступа к данным в формате JSON-->
+	<script src="../js/Json/json.js" type="text/javascript"></script>
+	<!-- Библиотека jQuery -->
+	<script src="../js/System/jquery.js" type="text/javascript"></script>
+	<!-- Прокси для авторизации -->
+	<script src="../js/Proxy/SecurityProxy.js" type="text/javascript"></script>
+	<!-- Прокси для получения данных о ценах -->
+	<script src="../js/Proxy/PriceProxy.js" type="text/javascript"></script>
+	<!-- Прокси для получения данных о справочниках -->
+	<script src="../js/Proxy/DictionariesProxy.js" type="text/javascript"></script>
+	<!-- Начальные установки модуля поиска -->
+	<script src="../js/Setup.js" type="text/javascript"></script>
+	<!-- Данные -->
+	<script src="../js/DataSource/DictionariesDataSource.js" type="text/javascript"></script>
+	<!-- ComboBox -->
+	<script src="../js/Controls/ComboBox.js"></script>
+	<link href="../Styles/Controls/ComboBox.css" rel="stylesheet"></link>
+	<!-- Витрина туров -->
+	<link href="../Styles/Showcase.css" rel="stylesheet"></link>
+	<script src="../js/ObjectModel/Showcase.js" type="text/javascript"></script>
+	<script src="../js/PageScript/Showcase.js" type="text/javascript"></script>
+	<script src="../js/PageScript/ShowcaseSetup2.js" type="text/javascript"></script>
+</head>
+<body onload="onloadwindow()">
+<div id="contentBody">
+	<form name="search" id="search" method="post">
+		<table cellspacing="0" cellpadding="5" border="0">
+			<tr>
+				<td id="DepartureCityComboBoxLabel">
+					<b>&nbsp;Город вылета:</b><br/>
+				</td>
+				<td id="DestinationCountryComboBoxLabel">
+					<b>&nbsp;Страна:</b><br/>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="10">
+					<b>Отель:&nbsp;</b>
+					<span align="center">
+						<input type="radio" name="StarsRadioBox" value='0' onclick="onChangeStar(this.value)" checked>&nbsp;Все&nbsp;&nbsp;
+						<input type="radio" name="StarsRadioBox" value='1' onclick="onChangeStar(this.value)">&nbsp;1*&nbsp;&nbsp;
+						<input type="radio" name="StarsRadioBox" value='2' onclick="onChangeStar(this.value)">&nbsp;2*&nbsp;&nbsp;
+						<input type="radio" name="StarsRadioBox" value='3' onclick="onChangeStar(this.value)">&nbsp;3*&nbsp;&nbsp;
+						<input type="radio" name="StarsRadioBox" value='4' onclick="onChangeStar(this.value)">&nbsp;4*&nbsp;&nbsp;
+						<input type="radio" name="StarsRadioBox" value='5' onclick="onChangeStar(this.value)">&nbsp;5*&nbsp;&nbsp;
+					</span>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="10">
+					<b>Ночей:&nbsp;</b>
+					<span align="center">
+						<input type="radio" name="NightsRadioBox" value='0' onclick="onChangeNights(this.value)" checked>&nbsp;Все&nbsp;&nbsp;
+						<input type="radio" name="NightsRadioBox" value='1' onclick="onChangeNights(this.value)">&nbsp;3-5&nbsp;&nbsp;
+						<input type="radio" name="NightsRadioBox" value='2' onclick="onChangeNights(this.value)">&nbsp;6-9&nbsp;&nbsp;
+						<input type="radio" name="NightsRadioBox" value='3' onclick="onChangeNights(this.value)">&nbsp;10-14&nbsp;&nbsp;
+					</span>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="10">
+					<div id="Showcase" align="center"></div>
+				</td>
+			</tr>
+		</table>
+	</form>
+
+	<div id="ShowcaseWaitBox">
+		<img src="../Images/snake.gif" alt="" width="16" height="16" />Идет загрузка ...
+	</div>
+	
+	<div id="Tour" class="Tour" style="display:none">
+		<div id="showcaseImageDiv" class="showcaseImageDivClass">
+			<a class="anchorPrice" href="">
+				<img class="image" border="0" src="" /></a>
+		</div>
+		<div id="showcaseTextDiv" class="showcaseTextDivClass">
+			<span class="destinationCountry"></span>
+			<br>
+			<a class="anchorPrice" style="color: red"><span class="price"></span></a>
+			<br>
+			Отель: <a class="anchorHotel"><span class="hotel"></span></a>
+			<br>
+			Вылет: <span class="departureDate"></span>
+			<br>
+			Ночей: <span class="duration"></span>
+			<br>
+			Туристов: <span class="touristsCount"></span>
+			<br>
+		</div>
+	</div>
+	<script>
+			function onloadwindow()
+			{
+				SetupShowcase();
+			}
+	</script>
+</div>
+</body>
+</html>

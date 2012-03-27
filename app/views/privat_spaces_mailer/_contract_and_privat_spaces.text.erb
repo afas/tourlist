@@ -1,0 +1,8 @@
+Номер тура: <%= @contract.tour_number %>
+Стоимость тура: <%= @contract.tour_price %> р.
+Договор заключён с <%= @contract.full_name %> <<%= @contract.email %>>
+
+<% @privat_spaces.each do |privat_space| %>
+    ФИО: <%= privat_space.full_name %>
+    Серия и номер загранпаспорта: <%= privat_space.serial_number %>
+<% end %>

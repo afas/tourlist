@@ -1,0 +1,52 @@
+.inner,
+.header,
+.header .topAdvert .slider li,
+.countries li,
+.searchTour .row,
+.searchResults li,
+.responsesList,
+.responsesList li,
+.tourOrder ol li ul,
+.footer .responses,
+.footer .responses ul,
+.footer .realFooter,
+.footer .realFooter .bottomMenu li {
+	zoom: 1;
+}
+.header .topMenu li {
+	-line-height: 12px;
+}
+.header .topAdvert h2 {
+	background: url('../images/bg-topAdvert-forIE.png') no-repeat;
+	height: 23px;
+	text-indent: -9999px;
+	width: 360px;
+}
+.header .topAdvert .slider .wrapper {
+	-background: none;
+	-filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='i/bg-slider.png', sizingMethod='crop');
+	-position: static;
+}
+.topTen ol li {
+	height: auto;
+}
+.topTen ol li a {
+	-right: 46px;
+	top: -1px;
+}
+.searchTour .row .item i {
+	bottom: 3px;
+	-bottom: 1px;
+	right: -3px;
+}
+.footer hr {
+	margin: -7px 0;
+}
+.responsesList ul,
+.responsesList li,
+.tourOrder ol li ul li {
+	display: inline;
+}
+.searchTour .row {
+    z-index: 1;
+}

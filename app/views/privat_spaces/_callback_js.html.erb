@@ -1,0 +1,23 @@
+<% content_for(:head) do %>
+    <%= javascript_include_tag 'accordion_funcs' %>
+
+    <script type="text/javascript">
+        function configure_accordion() {
+            $('#passport_actions').remove();
+            $('#frameResult').load(function() {
+                $('#frameResult').contents().find('#buttonSend img').remove();
+            });
+
+            $('#passport').removeClass('passive').addClass('active');
+            $('#pay').removeClass('passive').addClass('active');
+
+            set_step('pay');
+
+            activate_clickable_all();
+        }
+
+        $(function() {
+            configure_accordion();
+        });
+    </script>
+<% end %>

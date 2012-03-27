@@ -1,0 +1,196 @@
+<!-- 1.2.0 -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ext="utilits">
+
+<head>
+	<title>Результаты поиска</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta http-equiv="content-language" content="ru" />
+	<meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema" />
+	<!-- Системная библиотека -->
+	<script src="../js/System/System.js" type="text/javascript"></script>
+	<!-- Библиотека для работы с датами -->
+	<script src="../js/System/DateTime.js" type="text/javascript"></script>
+	<!-- Внешняя системная библиотека стороннего разработчика -->
+	<script src="../js/ajs/AJS.js" type="text/javascript"></script>
+	<script src="../js/ajs/AJS_fx.js" type="text/javascript"></script>
+	<!-- Оригинальный стиль BRONNI.RU -->
+	<link href="../Styles/Design.css" rel="stylesheet" />
+	<!-- Библиотека доступа к данным с сайта BRONN.RU -->
+	<script src="../js/System/Ajax.js" type="text/javascript"></script>
+	<!-- Библиотека доступа к данным в формате JSON-->
+	<script src="../js/Json/json.js" type="text/javascript"></script>
+	<!-- Прокси для авторизации -->
+	<script src="../js/Proxy/SecurityProxy.js" type="text/javascript"></script>
+	<!-- Прокси для получения данных по ценам -->
+	<script src="../js/Proxy/PriceProxy.js" type="text/javascript"></script>
+	<script src="../js/Proxy/DictionariesProxy.js" type="text/javascript"></script>
+	<!-- Обработчик шаблонов -->
+	<script src="../js/System/TemplateEngine.js" type="text/javascript"></script>
+	<script src="../js/System/jquery.js" type="text/javascript"></script>
+	<!-- Начальные установки модуля поиска -->
+	<script src="../js/Setup.js" type="text/javascript"></script>
+	<!-- Объекты -->
+	<script src="../js/ObjectModel/SearchFilter.js" type="text/javascript"></script>
+	<!-- Данные -->
+	<script src="../js/DataSource/ResultsDataSource.js" type="text/javascript"></script>
+	<script src="../js/DataSource/DictionariesDataSource.js" type="text/javascript"></script>
+	<!-- Библиотеки для обеспечения показа нового окна -->
+	<script type="text/javascript">
+	    var GB_ROOT_DIR = "../js/ajs/GreyBox/greybox/";
+	    var ImagesPath = "../Images/";
+	</script>
+	<script type="text/javascript" src="../js/ajs/GreyBox/greybox/gb_scripts.js"></script>
+	<link href="../js/ajs/GreyBox/greybox/gb_styles.css" rel="stylesheet" type="text/css" media="all" ></link>
+	<script src="../js/PageScript/Results.js" type="text/javascript"></script>
+</head>
+
+<body onload="onloadwindow()">
+<div id="contentBody">
+	<form name="Form" method="post" id="Form" action="">
+
+		<!-- Рамка таблицы -->
+		<table cellspacing="0" cellpadding="0" width="100%" border="0">
+			<tr valign="bottom">
+				<td height="14">
+					<img height="6" src="../Images/bg20.gif" width="15" border="0"/></td>
+				<td style="background: url(../Images/bg21.gif) repeat-x left bottom">
+					<span class="h1">
+						<img height="7" src="../Images/ic1.gif" width="7" border="0"/>&nbsp;&nbsp;РЕЗУЛЬТАТ ПОИСКА ЭКСКУРСИОННЫХ ТУРОВ</span></td>
+				<td>
+					<img height="6" src="../Images/bg22.gif" width="15" border="0"></td>
+			</tr>
+
+			<tr valign="top">
+				<td style="background: url(../Images/bg18.gif) repeat-y left top" width="15">
+					<img height="1" src="../Images/e.gif" width="15" border="0"></td>
+				<td id="ReTa"  width="100%" height="100%">
+					<img height="10" src="../Images/e.gif" width="1" border="0"><br/>
+					<!-- Контрол показа подсказки по картинкам -->
+<TABLE cellpadding="5" cellspacing="0" border="0" bgcolor="#f1f1f1" width="100%">
+	<TBODY><TR valign="top" width="100%">
+		<TD width="100%" class="t_sm">
+			<TABLE width="100%">
+				<TBODY><TR>
+					<TD><IMG src="../Images/button_prev.gif" width="18" height="18" border="0" align="middle"></TD>
+					<TD>Предыдущая страница</TD>
+					<TD><IMG src="../Images/button_next.gif" width="18" height="18" border="0" align="middle"></TD>
+					<TD>Следующая страница</TD>
+				</TR>
+				<TR>
+					<TD><IMG src="../Images/ic_information.gif" width="16" height="16" border="0" align="middle"></TD>
+					<TD>Подробная информация по туру. Заказ тура</TD>
+					<TD><IMG src="../Images/ic_actual.gif" width="16" height="16" border="0" align="middle"></TD>
+					<TD>Проверка актуальности тура по базе данных туроператора</TD>
+				</TR>				
+			</TBODY></TABLE>
+		</TD>
+	</TR>
+</TBODY></TABLE>
+<br/>
+					<!-- Контрол показа подсказки по картинкам -->
+					<table width="60%" cellspacing="1" cellpadding="1" border="0" id="disclaimerTable">
+					<tr>
+					<td>
+					    <div id="disclaimer" style="display:none;">
+					   <i> Обратите внимание, что цeны, помеченные символом&nbsp;<span style="color:Red; font-style:oblique">*&nbsp;&nbsp;</span>пересчитаны по курсу туроператора</i>
+					   </div>
+					</td>
+					</tr>
+					<tr></tr>
+					</table>
+					<table width="100%" class="tbl_1" cellspacing="1" cellpadding="1" rules="all" border="0">
+						<tr>
+							<td width="20">
+								<span ext:util="prevPageIcon()$token"></span>
+							</td>
+							<td width="20">
+								<span ext:util="nextPageIcon()$token"></span>
+							</td>
+							<td>
+								&nbsp;&nbsp;&nbsp;
+								<span id="WaitingControl" style="display: none;">
+									<img src="../Images/snake.gif">&nbsp;Идет поиск результатов....</span>
+							</td>
+						</tr>
+					</table>
+					<table width="100%" id="databysearch" class="tbl_1" cellspacing="1" cellpadding="1" rules="all" border="0">
+						<tr>
+							<td colspan="14">
+								<span id="requestResultMessage"></span>
+							</td>
+						</tr>
+						<tr class="f0" valign="bottom">
+							<td class="rh" nowrap width="1%">
+								...</td>
+							<td class="rh" nowrap width="1%">
+								...</td>
+							<td class="rh" nowrap>
+								Цена</td>
+							<td class="rh" nowrap>
+								Вылет</td>
+							<td class="rh" nowrap>
+								Маршрут</td>
+							<td class="rh" nowrap style="width:30%;">
+								Тур</td>
+							<td class="rh" nowrap>
+								&nbsp;*&nbsp;</td>
+							<td class="rh" nowrap>
+								Размещение</td>
+							<td class="rh" nowrap>
+								Категория</td>
+							<td class="rh" nowrap>
+								Ночей</td>
+							<td class="rh" nowrap>
+								Питание</td>
+						</tr>
+						<tr ext:util="prices$row" onclick="coloredRow(this)">
+							<td align="right">
+								<span ext:util="detailsIcon(prices.id)$token"></span>
+							</td>
+							<td align="right">
+								<span ext:util="actualizationIcon(prices.id, prices.actualization)$token"></span>
+							</td>
+							<td nowrap align="right">
+								<b><span ext:util="operatorPrice(prices.id, prices.operatorPrice, prices.operatorRURPrice, prices.operatorCurrency.key)$token"></span></b></td>
+							<td nowrap align="center" ext:util="(Date.fromUTCString(prices.checkinDate)).toLocaleDateString()$token">
+							</td>
+							<td nowrap align="center" ext:util="prices.route$token">
+							</td>
+							<td align="center" ext:util="prices.tour$token">
+							</td>
+							<td nowrap ext:util="prices.star.russianName$token">
+							</td>
+							<td nowrap align="center" ext:util="prices.accommodationType.russianName$token">
+							</td>
+							<td nowrap align="center" ext:util="prices.roomCategory.russianName$token">
+							</td>							
+							<td nowrap align="center" ext:util="prices.duration$token">
+							</td>
+							<td nowrap align="center" ext:util="prices.meal.russianName$token">
+							</td>
+						</tr>
+					</table>
+				</td>
+				<td style="background: url(../Images/bg19.gif) repeat-y left top" width="15">
+					<img height="1" src="../Images/e.gif" width="15" border="0"></td>
+			</tr>
+			<tr>
+				<td height="14">
+					<img height="14" src="../Images/bg15.gif" width="15" border="0"></td>
+				<td style="background: url(../Images/bg16.gif) repeat-x left top">
+					<img height="1" src="../Images/e.gif" width="1" border="0"></td>
+				<td>
+					<img height="14" src="../Images/bg17.gif" width="15" border="0"></td>
+			</tr>
+		</table>
+	</form>
+	<script type="text/javascript">
+			function onloadwindow()
+			{
+				onloadResults();
+			}
+	</script>
+</div>
+</body>
+</html>
